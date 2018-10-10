@@ -76,23 +76,50 @@ def get_data(html_text):
             # print(CommentCount)
             # print(LikeCount)
 
-            # #获取Content
-
+            #获取Content
             txt_count = data_info.find_all('p', {'class': 'txt'})
             #判断是否转发的微博
             forward_count = data_info.find_all('div',{'class':'card-comment'})
-
             #有全文 无转发
             if len(txt_count)>1:
                 content = data_info.find_all('p', {'class': 'txt'})
                 Content = content[1].get_text().strip()
-                print(Content)
-                print('----------有全文----------------')
+                #print(Content)
+                #print('----------有全文----------------')
             else:
                 content = data_info.find('p', {'class': 'txt'})
                 Content = content.get_text().strip()
-                print(Content)
-                print('--------无全文--------')
+                #print(Content)
+                #print('--------无全文--------')
+
+            #获取有转发的ForwardFromUserID ForwardFromPostID
+            if len(forward_count)==1 :
+                forward = data_info.find('ul', {'class': 'act s-fr'}).find_all('a')
+                ForwardFromUserID = forward[1]['href'].split('/')[-2].split('/')[-1]
+                ForwardFromPostID = forward[2]['action-data'].split('=')[-1]
+                #print(ForwardFromUserID)
+                #print(ForwardFromPostID)
+            else :
+                ForwardFromUserID = 'null'
+                ForwardFromPostID = 'null'
+                #print(ForwardFromUserID)
+                #print(ForwardFromPostID)
+
+            #获取Tags
+
+            #获取Urls
+
+            #获取Pics 转发的图片不算
+            if  len(forward_count)==0:
+                pic = data_info.find('ul', {'class': 'm3'}).find_all('img')
+                print(len(pic))
+                for p in range(1,len(pic)):
+                    img = p['src']
+                    print(img)
+            else:
+                img = 'null'
+                print(img)
+            #获取Videos
 
 
             temp.append(PostID)
@@ -103,6 +130,9 @@ def get_data(html_text):
             temp.append(CommentCount)
             temp.append(LikeCount)
             temp.append(Content)
+            temp.append(ForwardFromUserID)
+            temp.append(ForwardFromPostID)
+
 
             final.append(temp)
 
