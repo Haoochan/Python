@@ -233,11 +233,13 @@ def get_all_page(current_url):
             print('get_all_pages ERROR:', e)
             time.sleep(random.choice(range(5, 15)))
     bs = BeautifulSoup(rep.text, "html.parser")
-    a = bs.find('ul',{'class':'s-scroll'}).find_all('a')
-    if len(a)>0:
+    ul = bs.find('ul',{'class':'s-scroll'})
+    if ul!=None:
+        a=ul.find_all('a')
         last = a[-1].string[1:-1]
     else:
         last = '1'
+
     return last
 
 #统计每页数据数
@@ -315,7 +317,7 @@ def start_date(current_url):
     bs = BeautifulSoup(rep.text, "html.parser")
     start_from  = bs.find_all('p',{'class':'from'})
     a = start_from[0].find_all('a')
-    start = a[0].string
+    start = a[0].string.strip()
     now = datetime.datetime.now().strftime('%Y-%m-%d')
     now1 = datetime.datetime.now().strftime('%Y-%m-%d-%H')
     if '月' in start:
@@ -329,9 +331,7 @@ def start_date(current_url):
         first = now1
     return first
 
-
-#main主函数
-if __name__ == '__main__':
+def myfun() :
     # 设置cookies
     set_cookies(os.getcwd() + '/weibo_cookie.txt')
     start = datetime.datetime.now()
@@ -342,7 +342,7 @@ if __name__ == '__main__':
     flag =True
     empty = 0
     while flag:
-        weibo_url = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&Refer=g&page=1'
+        weibo_url = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&Refer=g&page=1'
         all_page = int(get_all_page(weibo_url))
         print('首页总页数'+str(all_page))
         if all_page ==50: #第一条时间
@@ -353,30 +353,32 @@ if __name__ == '__main__':
                 while month > 0:
                     while day > 0:
                         print(str(year) + '-' + str(month) + '-' + str(day))
-                        weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                        weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&' \
                                      'timescope=custom:' + str(year) + '-' + str(month) + '-' + str(day) + ':' \
                                      + str(year) + '-' + str(month) + '-' + str(day) + '&Refer=g&page=1'
                         day_all_page = int(get_all_page(weibo_urls))
                         print('按天第一页总页数'+str(day_all_page))
-                        # # 判断微博终结
-                        # if topic(weibo_urls):
-                        #     empty = empty + 1
-                        #     continue
-                        # else:
-                        #     empty = 0
 
-                        if day_all_page == 50:  # 如果每天超过50页 则按时间抓取数据
+                        # 判断微博终结
+                        if topic(weibo_urls):
+                            empty = empty + 1
+                        else:
+                            empty = 0
+                        print('empty值'+str(empty))
+
+                        # 如果每天超过50页 则按时间抓取数据
+                        if day_all_page == 50:
                             hour = int(start_date(weibo_urls)[11:13])
                             print(str(year) + '-' + str(month) + '-' + str(day)+'-'+str(hour))
                             for hours in range(hour, 0,-1):
-                                weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&' \
                                              'timescope=custom:' + str(year) + '-' + str(month) + '-' + str(day) +'-'+str(hours-1)+ ':' \
                                              + str(year) + '-' + str(month) + '-' + str(day) + '-'+str(hours)+ '&Refer=g&page=1'
                                 hour_all_page = int(get_all_page(weibo_urls))
                                 print('按小时第一页总页数' + str(hour_all_page))
                                 while p < hour_all_page:
                                     p = p + 1
-                                    weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                    weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&' \
                                                  'timescope=custom:' + str(year) + '-' + str(month) + '-' + str(
                                         day) + '-' + str(hours-1) + ':' \
                                                  + str(year) + '-' + str(month) + '-' + str(day) + '-' + str(
@@ -385,7 +387,7 @@ if __name__ == '__main__':
                                     if not page_content(weibo_urls):
                                         try:
                                             html = get_html(weibo_urls)
-                                            today_date = datetime.date.today()
+                                            #today_date = datetime.date.today()
                                             time.sleep(1)
                                             result = get_data(html)
                                             save_data(result, os.getcwd() + '/wade_weibo.csv')
@@ -396,18 +398,18 @@ if __name__ == '__main__':
                                             print(error)
                                             continue
                                 p=0
-
+                        # 如果每天少于50页 则直接按天数抓取数据
                         elif day_all_page<50:
                             while p < day_all_page:
                                 p = p + 1
-                                weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&' \
                                              'timescope=custom:' + str(year) + '-' + str(month) + '-' + str(day) + ':' \
                                              + str(year) + '-' + str(month) + '-' + str(day) + '&Refer=g&page='+str(p)
                                 print(weibo_urls)
                                 if not page_content(weibo_urls):
                                     try:
                                         html = get_html(weibo_urls)
-                                        today_date = datetime.date.today()
+                                        #today_date = datetime.date.today()
                                         time.sleep(1)
                                         result = get_data(html)
                                         save_data(result, os.getcwd() + '/wade_weibo.csv')
@@ -419,12 +421,11 @@ if __name__ == '__main__':
                                         continue
                             p=0
 
-
+                        # 判断连续30天没有内容 话题终结
+                        if empty==30:
+                            return
                         # 按日历循环
                         day = day - 1
-                        #判断连续30天没有内容 话题终结
-                        # if empty==30:
-                        #     break
                     month = month - 1
                     if year % 4 != 0 and month == 2:
                         day = 28
@@ -440,12 +441,12 @@ if __name__ == '__main__':
         else:
             while p < all_page:
                 p = p + 1
-                weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&Refer=g&page='+str(p)
+                weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&Refer=g&page='+str(p)
                 print(weibo_urls)
                 if not page_content(weibo_urls):
                     try:
                         html = get_html(weibo_urls)
-                        today_date = datetime.date.today()
+                        #today_date = datetime.date.today()
                         time.sleep(1)
                         result = get_data(html)
                         save_data(result, os.getcwd() + '/wade_weibo.csv')
@@ -459,10 +460,10 @@ if __name__ == '__main__':
 
         # while p < all_page:
         #     p=p+1
-        #     # weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&Refer=g&page=' + str(p)
-        #     # weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+        #     # weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&Refer=g&page=' + str(p)
+        #     # weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&' \
         #     #              'timescope=custom:'+t2+':'+t2+'&Refer=g&page=' + str(p)
-        #     weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+        #     weibo_urls = 'https://s.weibo.com/weibo?q=小老板紫菜好吃&typeall=1&suball=1&' \
         #                 'timescope=custom:2018-10-15-0:2018-10-15-0&Refer=g&page='+str(p)
         #     print(weibo_urls)
         #     if not page_content(weibo_urls):
@@ -485,6 +486,12 @@ if __name__ == '__main__':
     end = datetime.datetime.now()
     print("结束时间 :", end)
     print(end - start)
+
+#main主函数
+if __name__ == '__main__':
+    today_date = datetime.date.today()
+    myfun()
+
 
     # try:
     #     weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&Refer=g&page=36'#%E6%BD%98%E5%A9%B7

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24bb1bd5-671a-4131-969d-741585d103a9" name="Default Changelist" comment="" />
+    <list default="true" id="24bb1bd5-671a-4131-969d-741585d103a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_weibo.py" beforeDir="false" afterPath="$PROJECT_DIR$/spider_weibo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wade_weibo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/wade_weibo.csv" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,9 +79,30 @@
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
+    <session id="-2036596342">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="290" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="290" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open" />
+    </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7697576">
+    <splitter split-orientation="horizontal" split-proportion="0.8824307">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -104,18 +129,22 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spider_weibo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2771">
-                  <caret line="333" column="26" lean-forward="true" selection-start-line="333" selection-start-column="26" selection-end-line="333" selection-end-column="26" />
+                <state relative-caret-position="51">
+                  <caret line="245" column="25" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
                   <folding>
                     <element signature="e#17#26#0" expanded="true" />
+                    <element signature="e#162#784#0" />
                     <element signature="e#848#1182#0" />
                     <element signature="e#1220#1587#0" />
-                    <element signature="e#1626#7536#0" />
-                    <element signature="e#7574#7789#0" />
-                    <element signature="e#9003#9694#0" />
-                    <element signature="e#9783#10326#0" />
-                    <marker date="1539602444833" expanded="true" signature="7746:11267" ph="..." />
-                    <marker date="1539602444833" expanded="true" signature="10276:11267" ph="..." />
+                    <element signature="e#1626#7454#0" />
+                    <element signature="e#7492#7707#0" />
+                    <element signature="e#7751#8305#0" />
+                    <element signature="e#8346#8904#0" />
+                    <element signature="e#8954#9654#0" />
+                    <element signature="e#9699#10234#0" />
+                    <element signature="e#10281#11264#0" />
+                    <element signature="e#11317#19542#0" />
+                    <marker date="1539620488746" expanded="true" signature="11302:19469" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -124,13 +153,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/t1.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="70" column="18" selection-start-line="63" selection-start-column="8" selection-end-line="70" selection-end-column="18" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                    <element signature="e#1533#1603#0" />
-                    <marker date="1539596805418" expanded="true" signature="1326:1327" ph="..." />
-                  </folding>
+                <state relative-caret-position="250">
+                  <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -182,7 +206,13 @@
       <find>count[0].string</find>
       <find>总页数</find>
       <find>get_all_page</find>
+      <find>today_date</find>
+      <find>today_date = datetime.date.today()</find>
+      <find>data_count</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -195,11 +225,12 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="567" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="566" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -336,15 +367,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.09325606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.07692308" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21885157" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4582882" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6255319" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.45815602" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -379,6 +410,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/spider_taoche.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -392,6 +434,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/软件/python/Lib/site-packages/bs4/element.py" />
+    <entry file="file://$PROJECT_DIR$/readCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider_demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3125">
@@ -402,46 +459,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/软件/python/Lib/site-packages/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="1360" column="8" selection-start-line="1360" selection-start-column="8" selection-end-line="1360" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readCSV.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/t1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="70" column="18" selection-start-line="63" selection-start-column="8" selection-end-line="70" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#1533#1603#0" />
-            <marker date="1539596805418" expanded="true" signature="1326:1327" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider_weibo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2771">
-          <caret line="333" column="26" lean-forward="true" selection-start-line="333" selection-start-column="26" selection-end-line="333" selection-end-column="26" />
+        <state relative-caret-position="51">
+          <caret line="245" column="25" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
           <folding>
             <element signature="e#17#26#0" expanded="true" />
+            <element signature="e#162#784#0" />
             <element signature="e#848#1182#0" />
             <element signature="e#1220#1587#0" />
-            <element signature="e#1626#7536#0" />
-            <element signature="e#7574#7789#0" />
-            <element signature="e#9003#9694#0" />
-            <element signature="e#9783#10326#0" />
-            <marker date="1539602444833" expanded="true" signature="7746:11267" ph="..." />
-            <marker date="1539602444833" expanded="true" signature="10276:11267" ph="..." />
+            <element signature="e#1626#7454#0" />
+            <element signature="e#7492#7707#0" />
+            <element signature="e#7751#8305#0" />
+            <element signature="e#8346#8904#0" />
+            <element signature="e#8954#9654#0" />
+            <element signature="e#9699#10234#0" />
+            <element signature="e#10281#11264#0" />
+            <element signature="e#11317#19542#0" />
+            <marker date="1539620488746" expanded="true" signature="11302:19469" ph="..." />
           </folding>
         </state>
       </provider>
