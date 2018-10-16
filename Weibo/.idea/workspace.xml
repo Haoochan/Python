@@ -100,6 +100,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open" />
     </session>
+    <session id="-1850885264">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1365" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1365" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.8824307">
@@ -129,22 +159,22 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spider_weibo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="245" column="25" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
+                <state relative-caret-position="161">
+                  <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
                   <folding>
-                    <element signature="e#17#26#0" expanded="true" />
                     <element signature="e#162#784#0" />
                     <element signature="e#848#1182#0" />
                     <element signature="e#1220#1587#0" />
                     <element signature="e#1626#7454#0" />
                     <element signature="e#7492#7707#0" />
-                    <element signature="e#7751#8305#0" />
-                    <element signature="e#8346#8904#0" />
-                    <element signature="e#8954#9654#0" />
-                    <element signature="e#9699#10234#0" />
-                    <element signature="e#10281#11264#0" />
-                    <element signature="e#11317#19542#0" />
-                    <marker date="1539620488746" expanded="true" signature="11302:19469" ph="..." />
+                    <element signature="e#7751#8320#0" />
+                    <element signature="e#8361#8919#0" />
+                    <element signature="e#8969#9669#0" />
+                    <element signature="e#10296#11287#0" />
+                    <element signature="e#10712#11688#0" />
+                    <element signature="e#11355#11555#0" />
+                    <element signature="e#12887#13799#0" />
+                    <element signature="e#13895#13933#0" />
                   </folding>
                 </state>
               </provider>
@@ -153,8 +183,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/t1.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="250">
-                  <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+                <state relative-caret-position="216">
+                  <caret line="81" column="33" lean-forward="true" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -188,28 +221,43 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uid</find>
-      <find>1526449335</find>
-      <find>get_data</find>
-      <find>moon</find>
-      <find>action-da</find>
-      <find>action-data</find>
-      <find>Content</find>
-      <find>time.sleep</find>
-      <find>cookies=cookies</find>
-      <find>Videos</find>
-      <find>-1</find>
       <find>结果</find>
       <find>-2-29</find>
       <find>tRUE</find>
       <find>True</find>
       <find>count[0].string</find>
       <find>总页数</find>
-      <find>get_all_page</find>
       <find>today_date</find>
       <find>today_date = datetime.date.today()</find>
+      <find>topic</find>
+      <find>小老板紫菜好吃</find>
+      <find>empty值40</find>
+      <find>empty值50</find>
+      <find>empty值60</find>
+      <find>start_time1</find>
+      <find>year</find>
+      <find>小老板紫菜好吃的</find>
+      <find>day</find>
+      <find>page=2</find>
+      <find>mid_sum</find>
+      <find>page=4</find>
       <find>data_count</find>
+      <find>empty值30</find>
+      <find>strip</find>
+      <find>empty值49</find>
+      <find>get_all_page</find>
+      <find>泰国小老板紫菜好吃的</find>
+      <find>ForwardFromUserID</find>
+      <find>ForwardFromPostID</find>
+      <find>start_date</find>
+      <find>end</find>
     </findStrings>
+    <replaceStrings>
+      <replace>page_content</replace>
+      <replace>小老板紫菜好吃的</replace>
+      <replace>泰国小老板紫菜好吃的</replace>
+      <replace>最后一舞先生</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -220,12 +268,13 @@
         <option value="$PROJECT_DIR$/readCSV.py" />
         <option value="$PROJECT_DIR$/guazi_cookie.txt" />
         <option value="$PROJECT_DIR$/spider_demo.py" />
-        <option value="$PROJECT_DIR$/t1.py" />
+        <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/spider_weibo.py" />
+        <option value="$PROJECT_DIR$/t1.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="566" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
@@ -235,10 +284,23 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Weibo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Weibo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/Python/Weibo" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -253,7 +315,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.spider_weibo">
+  <component name="RunManager" selected="Python.t1">
     <configuration name="readCSV" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Weibo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -338,16 +400,39 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Weibo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.readCSV" />
       <item itemvalue="Python.t1" />
       <item itemvalue="Python.spider_demo" />
       <item itemvalue="Python.spider_weibo" />
+      <item itemvalue="Python.test1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.spider_weibo" />
         <item itemvalue="Python.t1" />
+        <item itemvalue="Python.test1" />
+        <item itemvalue="Python.spider_weibo" />
         <item itemvalue="Python.spider_demo" />
         <item itemvalue="Python.readCSV" />
       </list>
@@ -367,21 +452,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.09325606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.07692308" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6255319" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.27765727" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45815602" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.20715836" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -435,20 +520,6 @@
       </provider>
     </entry>
     <entry file="file://D:/软件/python/Lib/site-packages/bs4/element.py" />
-    <entry file="file://$PROJECT_DIR$/readCSV.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/t1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider_demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3125">
@@ -459,24 +530,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/readCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/软件/python/Lib/site-packages/bs4/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#152#774#0" />
+            <element signature="e#838#1172#0" />
+            <element signature="e#1210#1577#0" />
+            <element signature="e#7550#7765#0" />
+            <element signature="e#7809#8378#0" />
+            <element signature="e#8419#8868#0" />
+            <element signature="e#8918#9618#0" />
+            <element signature="e#9665#10656#0" />
+            <element signature="e#10698#17862#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="81" column="33" lean-forward="true" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider_weibo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="245" column="25" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
+        <state relative-caret-position="161">
+          <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
           <folding>
-            <element signature="e#17#26#0" expanded="true" />
             <element signature="e#162#784#0" />
             <element signature="e#848#1182#0" />
             <element signature="e#1220#1587#0" />
             <element signature="e#1626#7454#0" />
             <element signature="e#7492#7707#0" />
-            <element signature="e#7751#8305#0" />
-            <element signature="e#8346#8904#0" />
-            <element signature="e#8954#9654#0" />
-            <element signature="e#9699#10234#0" />
-            <element signature="e#10281#11264#0" />
-            <element signature="e#11317#19542#0" />
-            <marker date="1539620488746" expanded="true" signature="11302:19469" ph="..." />
+            <element signature="e#7751#8320#0" />
+            <element signature="e#8361#8919#0" />
+            <element signature="e#8969#9669#0" />
+            <element signature="e#10296#11287#0" />
+            <element signature="e#10712#11688#0" />
+            <element signature="e#11355#11555#0" />
+            <element signature="e#12887#13799#0" />
+            <element signature="e#13895#13933#0" />
           </folding>
         </state>
       </provider>
