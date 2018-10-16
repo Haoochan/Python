@@ -47,44 +47,24 @@ import time
 #     print(now)
 #     print(now1)
 
-# a='2018-10-15-14'
-# print(a[0:4])
-# print(a[5:7])
-# print(a[8:10])
-# year = int(a[0:4])
-# month = int(a[5:7])
-# day = int(a[8:10])
-# hour = int()
-# while year>2008:
-#     while month>0:
-#         while day>0:
-#                 print(str(year)+'-'+str(month)+'-'+str(day))
-#                 day=day-1
-#         month=month-1
-#         if year%4!=0 and month==2:
-#             day=28
-#         elif year%4==0 and month==2:
-#             day=29
-#         elif month==4 or month==6 or month==9 or month==11:
-#             day=30
-#         else:
-#             day=31
-#     year = year-1
-#     month=12
 
 
-first_data = '2018-10-16-14'
-start_time = first_data
-end_time = '2018-8-01'
-year = int(first_data[0:4]) #2018
-month = int(first_data[5:7]) #10
-day = int(first_data[8:10]) #16
-hour = int(first_data[11:13]) #14
+# first_data = '2018-08-15-23'
+# start_time = first_data
+# end_time = '2018-8-01'
+# year = int(first_data[0:4]) #2018
+# month = int(first_data[5:7]) #10
+# day = int(first_data[8:10]) #16
+# hour = int(first_data[11:13]) #14
 #start_time1 = first_data[0:8]+str(day+1)
-datestart = datetime.datetime.strptime(start_time, '%Y-%m-%d-%H')
-datestart=datestart+datetime.timedelta(hours=1)
-#dateend = datetime.datetime.strptime(end_time, '%Y-%m-%d-%H')
-print(datestart.strftime('%Y-%m-%d-%H'))
+# datestart = datetime.datetime.strptime(start_time, '%Y-%m-%d-%H')
+# datestart=datestart+datetime.timedelta(hours=1)
+# #dateend = datetime.datetime.strptime(end_time, '%Y-%m-%d-%H')
+# a = datestart.strftime('%Y-%m-%d-%H')
+# weibo_urls = 'https://s.weibo.com/weibo?q=泰国小老板紫菜好吃的&typeall=1&suball=1&' \
+#              'timescope=custom:' + ':' \
+#              + a + '&Refer=g&page=1'
+# print(weibo_urls)
 #
 # while datestart > dateend:
 #     datestart -= datetime.timedelta(days=1)
@@ -98,4 +78,18 @@ print(datestart.strftime('%Y-%m-%d-%H'))
 #                  + begin_time1 + '-0&Refer=g&page=1'
 #     print(weibo_urls)
 
+# for i in range(2,24):
+#     print(str(i)+'---'+str(i+1))
 
+last_data = '2018-10-16-14'
+hour = int(last_data[11:13])
+
+datestart = datetime.datetime.strptime(last_data, '%Y-%m-%d-%H')
+dateend = datestart + datetime.timedelta(hours=1)
+datestart = datestart.strftime('%Y-%m-%d-%H')
+dateend = dateend.strftime('%Y-%m-%d-%H')
+for i in range(hour, 24):
+    weibo_urls = 'https://s.weibo.com/weibo?q=泰国小老板紫菜&typeall=1&suball=1&' \
+                 'timescope=custom:'+datestart+':' \
+                 + dateend + '&Refer=g&page=1'
+    print(weibo_urls)
