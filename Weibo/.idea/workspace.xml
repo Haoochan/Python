@@ -116,28 +116,29 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.381" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1365" />
+          <entry key="py" value="2114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1365" />
+          <entry key="Python" value="2114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -146,10 +147,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.8824307">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spider_demo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="343">
+                <state relative-caret-position="3125">
                   <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
                   <folding>
                     <element signature="e#17#26#0" expanded="true" />
@@ -167,17 +168,48 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spider_weibo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-494">
-                  <caret line="386" column="48" selection-start-line="386" selection-start-column="48" selection-end-line="386" selection-end-column="48" />
+                <state relative-caret-position="208">
+                  <caret line="328" column="56" selection-start-line="328" selection-start-column="56" selection-end-line="328" selection-end-column="56" />
                   <folding>
                     <element signature="e#17#26#0" expanded="true" />
-                    <element signature="e#12292#13131#0" />
-                    <element signature="e#14227#15310#0" />
-                    <element signature="e#15489#15496#0" />
-                    <element signature="e#20071#20077#0" />
+                    <element signature="e#181#803#0" />
+                    <element signature="e#867#1201#0" />
+                    <element signature="e#1239#1606#0" />
+                    <element signature="e#1645#7615#0" />
+                    <element signature="e#7653#7868#0" />
+                    <element signature="e#7912#8553#0" />
+                    <element signature="e#8594#9043#0" />
+                    <element signature="e#9093#9869#0" />
+                    <element signature="e#9916#11043#0" />
+                    <element signature="e#13415#14657#0" />
+                    <element signature="e#14780#16171#0" />
+                    <element signature="e#17501#18776#0" />
+                    <element signature="e#21607#22635#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test1.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-240">
+                  <caret line="366" selection-start-line="366" selection-end-line="366" />
+                  <folding>
+                    <element signature="e#152#774#0" />
+                    <element signature="e#838#1172#0" />
+                    <element signature="e#1210#1577#0" />
+                    <element signature="e#1616#7512#0" />
+                    <element signature="e#7550#7765#0" />
+                    <element signature="e#8419#8868#0" />
+                    <element signature="e#8918#9618#0" />
+                    <element signature="e#9665#10718#0" />
+                    <element signature="e#10769#11764#0" />
+                    <element signature="e#12768#21437#0" />
+                    <element signature="e#14786#16060#0" />
                   </folding>
                 </state>
               </provider>
@@ -186,8 +218,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/t1.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
-                  <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+                <state relative-caret-position="575">
+                  <caret line="98" column="28" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -199,7 +231,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spider_demo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="63">
+                <state relative-caret-position="136">
                   <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
                   <folding>
                     <element signature="e#17#26#0" expanded="true" />
@@ -221,20 +253,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>-2-29</find>
-      <find>tRUE</find>
-      <find>True</find>
-      <find>count[0].string</find>
-      <find>总页数</find>
-      <find>today_date</find>
-      <find>today_date = datetime.date.today()</find>
-      <find>topic</find>
-      <find>小老板紫菜好吃</find>
-      <find>empty值40</find>
-      <find>empty值50</find>
-      <find>empty值60</find>
-      <find>start_time1</find>
-      <find>year</find>
       <find>小老板紫菜好吃的</find>
       <find>day</find>
       <find>page=2</find>
@@ -250,7 +268,21 @@
       <find>end</find>
       <find>data_count</find>
       <find>泰国小老板紫菜好吃的</find>
+      <find>邓超好吃</find>
+      <find>wade_weibo</find>
+      <find>%E9%82%93%E8%B6%85</find>
+      <find>2018-10-08-0</find>
+      <find>跳过</find>
+      <find>print('当前页抓取条数' + str(len(result)))</find>
+      <find>test_weibo</find>
+      <find>邓超</find>
+      <find>泰国小老板紫菜</find>
+      <find>flag2</find>
+      <find>flag3</find>
+      <find>flag4</find>
+      <find>flag5</find>
       <find>泰国小老板紫菜好吃</find>
+      <find>flag6</find>
     </findStrings>
     <replaceStrings>
       <replace>page_content</replace>
@@ -259,8 +291,14 @@
       <replace>最后一舞先生</replace>
       <replace>小老板紫菜好吃</replace>
       <replace>end</replace>
+      <replace>test_weibo</replace>
+      <replace>邓超</replace>
+      <replace>2013-09-01-0</replace>
+      <replace>wade_weibo</replace>
       <replace>泰国小老板紫菜好吃</replace>
       <replace>泰国小老板紫菜</replace>
+      <replace>伊卡璐洗发露</replace>
+      <replace>韦德最后一舞</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -272,13 +310,13 @@
         <option value="$PROJECT_DIR$/readCSV.py" />
         <option value="$PROJECT_DIR$/guazi_cookie.txt" />
         <option value="$PROJECT_DIR$/spider_demo.py" />
+        <option value="$PROJECT_DIR$/t1.py" />
         <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/spider_weibo.py" />
-        <option value="$PROJECT_DIR$/t1.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="565" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
@@ -288,7 +326,10 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="E:/Python/Weibo" />
@@ -306,7 +347,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.t1">
+  <component name="RunManager" selected="Python.spider_weibo">
     <configuration name="readCSV" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Weibo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -421,9 +462,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.t1" />
         <item itemvalue="Python.spider_weibo" />
         <item itemvalue="Python.test1" />
+        <item itemvalue="Python.t1" />
         <item itemvalue="Python.spider_demo" />
         <item itemvalue="Python.readCSV" />
       </list>
@@ -443,21 +484,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.09325606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.07692308" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.3716312" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45815602" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49894625" visible="true" weight="0.46312365" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.45770064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.20715836" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50105375" side_tool="true" weight="0.4121475" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -512,41 +553,7 @@
     </entry>
     <entry file="file://D:/软件/python/Lib/site-packages/bs4/element.py" />
     <entry file="file://D:/软件/python/Lib/site-packages/bs4/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/MyAPP/Python/Lib/_strptime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="576" selection-start-line="576" selection-end-line="576" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/t1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spider_weibo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="386" column="48" selection-start-line="386" selection-start-column="48" selection-end-line="386" selection-end-column="48" />
-          <folding>
-            <element signature="e#17#26#0" expanded="true" />
-            <element signature="e#12292#13131#0" />
-            <element signature="e#14227#15310#0" />
-            <element signature="e#15489#15496#0" />
-            <element signature="e#20071#20077#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/MyAPP/Python/Lib/_strptime.py" />
     <entry file="file://$PROJECT_DIR$/readCSV.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -556,10 +563,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spider_demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
+        <state relative-caret-position="3125">
           <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
           <folding>
             <element signature="e#17#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/软件/python/Lib/site-packages/urllib3/util/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/t1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="366" selection-start-line="366" selection-end-line="366" />
+          <folding>
+            <element signature="e#152#774#0" />
+            <element signature="e#838#1172#0" />
+            <element signature="e#1210#1577#0" />
+            <element signature="e#1616#7512#0" />
+            <element signature="e#7550#7765#0" />
+            <element signature="e#8419#8868#0" />
+            <element signature="e#8918#9618#0" />
+            <element signature="e#9665#10718#0" />
+            <element signature="e#10769#11764#0" />
+            <element signature="e#12768#21437#0" />
+            <element signature="e#14786#16060#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider_weibo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="328" column="56" selection-start-line="328" selection-start-column="56" selection-end-line="328" selection-end-column="56" />
+          <folding>
+            <element signature="e#17#26#0" expanded="true" />
+            <element signature="e#181#803#0" />
+            <element signature="e#867#1201#0" />
+            <element signature="e#1239#1606#0" />
+            <element signature="e#1645#7615#0" />
+            <element signature="e#7653#7868#0" />
+            <element signature="e#7912#8553#0" />
+            <element signature="e#8594#9043#0" />
+            <element signature="e#9093#9869#0" />
+            <element signature="e#9916#11043#0" />
+            <element signature="e#13415#14657#0" />
+            <element signature="e#14780#16171#0" />
+            <element signature="e#17501#18776#0" />
+            <element signature="e#21607#22635#0" />
           </folding>
         </state>
       </provider>

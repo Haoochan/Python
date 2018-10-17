@@ -6,7 +6,7 @@ import random
 import time
 import datetime
 from bs4 import BeautifulSoup
-from bs4 import SoupStraine
+from bs4 import SoupStrainer
 
 #伪装浏览器
 request_headers = {
@@ -55,8 +55,8 @@ def get_html(url):
 #获取页面数据
 def get_data(html_text):
     final = []
-    #product = SoupStrainer('div', {'id': 'products_list'})
-    bs = BeautifulSoup(html_text,"html.parser")
+    target = SoupStrainer('div',{'class':'card-wrap'})
+    bs = BeautifulSoup(html_text,"html.parser" ,parse_only=target)
     #进入微博 判断div有mid
     #data = bs.find_all('div',{'action-type':'feed_list_item'})
     data = bs.find_all('div', mid=True)
@@ -233,7 +233,8 @@ def get_all_page(current_url):
         except Exception as e:
             print('get_all_pages ERROR:', e)
             time.sleep(random.choice(range(5, 15)))
-    bs = BeautifulSoup(rep.text, "html.parser")
+    target = SoupStrainer('div', {'class': 'm-page'})
+    bs = BeautifulSoup(rep.text, "html.parser",parse_only=target)
     ul = bs.find('ul',{'class':'s-scroll'})
     if ul!=None:
         a=ul.find_all('a')
@@ -269,7 +270,8 @@ def page_content(current_url):
         except Exception as e:
             print('page_content ERROR:', e)
             time.sleep(random.choice(range(5, 15)))
-    bs = BeautifulSoup(rep.text, "html.parser")
+    target = SoupStrainer('div', {'class': 'card-wrap'})
+    bs = BeautifulSoup(rep.text, "html.parser", parse_only=target)
     # 获取总数据数
     # try:
     #     count = bs.find_all('p', {'class': 'result'})
@@ -293,9 +295,11 @@ def start_date(current_url):
         except Exception as e:
             print('get_all_pages ERROR:', e)
             time.sleep(random.choice(range(5, 15)))
-    bs = BeautifulSoup(rep.text, "html.parser")
-    start_from  = bs.find_all('p',{'class':'from'})
-    a = start_from[0].find_all('a')
+    target = SoupStrainer('div', {'class': 'content'})
+    bs = BeautifulSoup(rep.text, "html.parser", parse_only=target)
+    content = bs.find_all('div',{'class':'content'})
+    start_from  = content[0].find_all('p',{'class':'from'})
+    a = start_from[-1].find_all('a')
     start = a[0].string.strip()
     now = datetime.datetime.now().strftime('%Y-%m-%d')
     now1 = datetime.datetime.now().strftime('%Y-%m-%d-%H')
@@ -310,10 +314,38 @@ def start_date(current_url):
         first = now1
     return first
 
+#获取最后一页最后一条微博时间
+def end_date(current_url,p):
+    current_url = current_url[0:-1]+str(p)
+    timeout = random.choice(range(80, 180))
+    while True:
+        try:
+            rep = requests.get(current_url, headers=request_headers, cookies=cookies, timeout=timeout)
+            rep.encoding = 'UTF-8'
+            break
+        except Exception as e:
+            print('get_all_pages ERROR:', e)
+            time.sleep(random.choice(range(5, 15)))
+    target = SoupStrainer('p', {'class': 'from'})
+    bs = BeautifulSoup(rep.text, "html.parser", parse_only=target)
+    end_from  = bs.find_all('p',{'class':'from'})
+    a = end_from[-1].find_all('a')
+    end = a[0].string.strip()
+    now = datetime.datetime.now().strftime('%Y-%m-%d')
+    now1 = datetime.datetime.now().strftime('%Y-%m-%d-%H')
+    if '月' in end:
+        if '年' in end:
+            end = end[0:4] + '-' + end[5:7] + '-' + end[8:10] + '-' + end[12:14]
+        else:
+            end = '2018-' + end[0:2] + '-' + end[3:5] + '-' + end[7:9]
+    elif '今天' in end:
+        end =  now + '-' + (end[2:4])
+    elif '前' in end:
+        end = now1
+    return end
+
 #main主函数
 if __name__ == '__main__':
-    #today_date = datetime.date.today()
-    #myfun()
     # 设置cookies
     set_cookies(os.getcwd() + '/weibo_cookie.txt')
     start = datetime.datetime.now()
@@ -323,85 +355,33 @@ if __name__ == '__main__':
     mid_sum = 0
     flag =True
     flag2 =True
-    empty = 0
+    flag4 = True #第一次拿50条
+    flag5 = True #在不同天内遇到同一天 跳去按时间段爬
+    flag6 = False #爬完时间段 跳回下一天
+    #empty = 0
     lost = []
     while flag and flag2:
-        weibo_url = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&Refer=g&page=1'
+        weibo_url = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&Refer=g&page=1'
         all_page = int(get_all_page(weibo_url))
         print('首页总页数'+str(all_page))
+
         #总页数有50页
         if all_page ==50: #第一条时间
-            first_data = start_date(weibo_url) #2018-10-16-14
-            start_time = first_data[0:10] #2018-10-16
-            end_time = '2009-08-16' #微博结束时间
-            datestart = datetime.datetime.strptime(start_time, '%Y-%m-%d') #2018-10-16
-            datestart = datestart + datetime.timedelta(days=1) #2018-10-17
-            dateend = datetime.datetime.strptime(end_time, '%Y-%m-%d') #2009-08-16
-
-            while datestart > dateend and flag2:
-                datestart -= datetime.timedelta(days=1)
-                begin_time = datestart.strftime('%Y-%m-%d') #2018-10-16
-                begin_time_a = datestart + datetime.timedelta(days=1)
-                begin_time1 = begin_time_a.strftime('%Y-%m-%d') #2018-10-17
-                weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&' \
-                             'timescope=custom:' + begin_time + ':' \
-                             + begin_time1 + '-0&Refer=g&page=1'
-                # 判断微博终结
-                if page_content(weibo_urls):
-                    print(weibo_urls)
-                    empty = empty + 1
-                    print('empty值' + str(empty))
-                    if empty==30:
-                        flag2 = False
-                        break
-                    else:
-                        continue
-                else:
-                    empty = 0
-                    print('empty值' + str(empty))
-
-                day_all_page = int(get_all_page(weibo_urls))
-                # 如果每天超过50页 则按时间抓取数据
-                if day_all_page == 50:
-                    hour = int(start_date(weibo_urls)[11:13])  # 22
-                    print(first_data)
-                    for hours in range(hour, -1, -1):
-                        weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&' \
-                                     'timescope=custom:' + begin_time + '-' + str(hours) + ':' \
-                                     + begin_time + '-' + str(hours + 1) + '&Refer=g&page=1'
-                        hour_all_page = int(get_all_page(weibo_urls))
-                        print('按小时第一页总页数' + str(hour_all_page))
-                        while p < hour_all_page:
-                            p = p + 1
-                            weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&' \
-                                         'timescope=custom:' + begin_time + '-' + str(hours) + ':' \
-                                         + begin_time + '-' + str(hours + 1) + '&Refer=g&page='+str(p)
-                            print(weibo_urls)
-                            flag3 = page_content(weibo_urls)
-                            if not flag3:
-                                try:
-                                    html = get_html(weibo_urls)
-                                    today_date = datetime.date.today()
-                                    time.sleep(1)
-                                    result = get_data(html)
-                                    save_data(result, os.getcwd() + '/test_weibo.csv')
-                                    sum = sum + len(result)
-                                    # mid_sum = mid_sum + data_count(weibo_urls)
-                                    print('当前页抓取条数' + str(len(result)))
-                                except Exception as error:
-                                    print(error)
-                                    continue
-                            elif all_page > 1 and flag3:
-                                lost.append(weibo_urls)
-                        p = 0
-
-                # 如果每天少于50页 则直接按天数抓取数据
-                elif day_all_page < 50:
-                    while p < day_all_page:
+            while flag2 :
+                all_page = int(get_all_page(weibo_url))
+                first_data = start_date(weibo_url) #2018-10-16-14
+                start_time = first_data[0:10] #2018-10-16
+                start_hour = first_data[11:13] #14
+                last_data = end_date(weibo_url, all_page)
+                end_time = last_data[0:10]
+                print(start_time+'-------------'+end_time)
+                #第一条时间 与 最后一条时间 不在同一天 不用进入小时
+                if start_time != end_time:
+                    flag5 = True
+                    #获取首次搜索的50页数据
+                    while p < all_page and flag4:
                         p = p + 1
-                        weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&' \
-                                     'timescope=custom:' + begin_time + ':' \
-                                     + begin_time1 + '-0&Refer=g&page='+str(p)
+                        weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&Refer=g&page=' + str(p)
                         print(weibo_urls)
                         flag3 = page_content(weibo_urls)
                         if not flag3:
@@ -410,23 +390,149 @@ if __name__ == '__main__':
                                 today_date = datetime.date.today()
                                 time.sleep(1)
                                 result = get_data(html)
-                                save_data(result, os.getcwd() + '/test_weibo.csv')
+                                save_data(result, os.getcwd() + '/wade_weibo.csv')
                                 sum = sum + len(result)
                                 # mid_sum = mid_sum + data_count(weibo_urls)
                                 print('当前页抓取条数' + str(len(result)))
+                                if len(result) == 0:
+                                    lost.append(weibo_urls)
+                            except Exception as error:
+                                print(error)
+                                continue
+                        elif all_page > 1 and flag3:
+                            lost.append(weibo_urls)
+                        if p==50:
+                            flag4 =False
+                    p = 0
+
+                    #按小时获取完后 不在同一天的第一次获取
+                    if flag6:
+                        while p < all_page :
+                            p = p + 1
+                            weibo_urls = weibo_url[0:-1]+str(p)
+                            print(weibo_urls)
+                            flag3 = page_content(weibo_urls)
+                            if not flag3:
+                                try:
+                                    html = get_html(weibo_urls)
+                                    today_date = datetime.date.today()
+                                    time.sleep(1)
+                                    result = get_data(html)
+                                    save_data(result, os.getcwd() + '/wade_weibo.csv')
+                                    sum = sum + len(result)
+                                    # mid_sum = mid_sum + data_count(weibo_urls)
+                                    print('当前页抓取条数' + str(len(result)))
+                                    if len(result) == 0:
+                                        lost.append(weibo_urls)
+                                except Exception as error:
+                                    print(error)
+                                    continue
+                            elif all_page > 1 and flag3:
+                                lost.append(weibo_urls)
+                            if p==50:
+                                flag4 =False
+                        p = 0
+                        flag6 = False
+
+                    dateend = datetime.datetime.strptime(last_data, '%Y-%m-%d-%H')
+                    dateend = dateend + datetime.timedelta(hours=1)
+                    dateend = dateend.strftime('%Y-%m-%d-%H')
+                    weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                 'timescope=custom:'+':' \
+                                 + dateend + '&Refer=g&page=1'
+                    all_page = int(get_all_page(weibo_urls))
+                    print(all_page)
+                    weibo_url = weibo_urls
+                    print('爬数据前url' + weibo_url)
+                    all_page = int(get_all_page(weibo_url))
+                    print(all_page)
+                    first_data = start_date(weibo_url)  # 2018-10-16-14
+                    start_time = first_data[0:10]  # 2018-10-16
+                    start_hour = first_data[11:13]
+                    last_data = end_date(weibo_url, all_page)
+                    end_time = last_data[0:10]
+                    print(first_data + '-------------' + last_data)
+                    print(start_time + '-------------' + end_time)
+                    if start_time == end_time:
+                        flag5 = False
+                    #获取数据
+                    while p < all_page and flag5:
+                        p = p + 1
+                        weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                 'timescope=custom:'+':' \
+                                 + dateend + '&Refer=g&page='+str(p)
+                        print(weibo_urls)
+                        flag3 = page_content(weibo_urls)
+                        if not flag3:
+                            try:
+                                html = get_html(weibo_urls)
+                                today_date = datetime.date.today()
+                                time.sleep(1)
+                                result = get_data(html)
+                                save_data(result, os.getcwd() + '/wade_weibo.csv')
+                                sum = sum + len(result)
+                                # mid_sum = mid_sum + data_count(weibo_urls)
+                                print('当前页抓取条数' + str(len(result)))
+                                if len(result) == 0:
+                                    lost.append(weibo_urls)
                             except Exception as error:
                                 print(error)
                                 continue
                         elif all_page > 1 and flag3:
                             lost.append(weibo_urls)
                     p = 0
+                    if all_page < 50 or all_page<50:
+                        flag2 = False
+
+                #第一条时间 与 最后一条时间 在同一天 进入每小时取
+                if start_time == end_time:
+                    print(start_time + '-------------' + end_time)
+                    for hours in range(int(start_hour), -1, -1):
+                            weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                         'timescope=custom:' + start_time + '-' + str(hours) + ':' \
+                                         + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
+                            hour_all_page = int(get_all_page(weibo_urls))
+                            #获取数据
+                            while p < hour_all_page:
+                                p = p + 1
+                                weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                             'timescope=custom:' + start_time + '-' + str(hours) + ':' \
+                                             + start_time + '-' + str(hours + 1) + '&Refer=g&page='+str(p)
+                                print(weibo_urls)
+                                flag3 = page_content(weibo_urls)
+                                if not flag3:
+                                    try:
+                                        html = get_html(weibo_urls)
+                                        today_date = datetime.date.today()
+                                        time.sleep(1)
+                                        result = get_data(html)
+                                        save_data(result, os.getcwd() + '/wade_weibo.csv')
+                                        sum = sum + len(result)
+                                        # mid_sum = mid_sum + data_count(weibo_urls)
+                                        print('当前页抓取条数' + str(len(result)))
+                                        if len(result) == 0:
+                                            lost.append(weibo_urls)
+                                    except Exception as error:
+                                        print(error)
+                                        continue
+                                elif all_page > 1 and flag3:
+                                    lost.append(weibo_urls)
+                            p = 0
+
+                    weibo_url = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&' \
+                                 'timescope=custom:'+':' \
+                                 + start_time +'-0&Refer=g&page=1'
+                    print(weibo_url)
+                    flag4 = False
+                    flag6 = True
 
             flag=False
+
         #总页数没有50页
-        else:
+        if all_page <50 and flag2:
             while p < all_page:
                 p = p + 1
-                weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&Refer=g&page='+str(p)
+                weibo_urls = 'https://s.weibo.com/weibo?q=韦德最后一舞&typeall=1&suball=1&Refer=g&page='+str(p)
                 print(weibo_urls)
                 #页面有没有内容
                 flag3 = page_content(weibo_urls)
@@ -436,16 +542,17 @@ if __name__ == '__main__':
                         today_date = datetime.date.today()
                         time.sleep(1)
                         result = get_data(html)
-                        save_data(result, os.getcwd() + '/test_weibo.csv')
+                        save_data(result, os.getcwd() + '/wade_weibo.csv')
                         sum = sum + len(result)
                         #mid_sum = mid_sum + data_count(weibo_urls)
                         print('当前页抓取条数' + str(len(result)))
+                        if len(result) == 0:
+                            lost.append(weibo_urls)
                     except Exception as error:
                         print(error)
                         continue
                 elif all_page>1 and flag3 :
                     lost.append(weibo_urls)
-
             flag=False
 
     print('-------------')
@@ -457,14 +564,4 @@ if __name__ == '__main__':
         for i in range(len(lost)):
             print('需要重连连接'+lost[i])
 
-    # try:
-    #     weibo_urls = 'https://s.weibo.com/weibo?q=最后一舞先生&typeall=1&suball=1&Refer=g&page=36'#%E6%BD%98%E5%A9%B7
-    #     print(weibo_urls)
-    #     html = get_html(weibo_urls)
-    #     today_date = datetime.date.today()
-    #     time.sleep(2)
-    #     result = get_data(html)
-    #     save_data(result, os.getcwd() + '/panting_weibo.csv')
-    # except Exception as error:
-    #     print(error)
 

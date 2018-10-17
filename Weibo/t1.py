@@ -78,18 +78,22 @@ import time
 #                  + begin_time1 + '-0&Refer=g&page=1'
 #     print(weibo_urls)
 
-# for i in range(2,24):
-#     print(str(i)+'---'+str(i+1))
+# last_data = '2018-10-16-14'
+# hour = int(last_data[11:13])
+#
+# datestart = datetime.datetime.strptime(last_data, '%Y-%m-%d-%H')
+# dateend = datestart + datetime.timedelta(hours=1)
+# datestart = datestart.strftime('%Y-%m-%d-%H')
+# dateend = dateend.strftime('%Y-%m-%d-%H')
+# for i in range(hour, 24):
+#     weibo_urls = 'https://s.weibo.com/weibo?q=泰国小老板紫菜&typeall=1&suball=1&' \
+#                  'timescope=custom:'+datestart+':' \
+#                  + dateend + '&Refer=g&page=1'
+#     print(weibo_urls)
 
-last_data = '2018-10-16-14'
-hour = int(last_data[11:13])
-
-datestart = datetime.datetime.strptime(last_data, '%Y-%m-%d-%H')
-dateend = datestart + datetime.timedelta(hours=1)
-datestart = datestart.strftime('%Y-%m-%d-%H')
-dateend = dateend.strftime('%Y-%m-%d-%H')
-for i in range(hour, 24):
-    weibo_urls = 'https://s.weibo.com/weibo?q=泰国小老板紫菜&typeall=1&suball=1&' \
-                 'timescope=custom:'+datestart+':' \
-                 + dateend + '&Refer=g&page=1'
-    print(weibo_urls)
+start_time  = '2018-10-16'
+p=2
+weibo_url = 'https://s.weibo.com/weibo?q=邓超&typeall=1&suball=1&' \
+             'timescope=custom:'+':' \
+             + start_time +'-0&Refer=g&page=1'
+print(weibo_url[0:-1]+str(p))
