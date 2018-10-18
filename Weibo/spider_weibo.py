@@ -361,18 +361,18 @@ if __name__ == '__main__':
     #empty = 0
     lost = []
     while flag and flag2:
-        weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
+        weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&Refer=g&page=1'
         all_page = int(get_all_page(weibo_url))
         print('首页总页数'+str(all_page))
 
         #总页数有50页
         if all_page ==50: #第一条时间
             while flag2 :
-                all_page = int(get_all_page(weibo_url))
+                all_page1 = int(get_all_page(weibo_url))
                 first_data = start_date(weibo_url) #2018-10-16-14
                 start_time = first_data[0:10] #2018-10-16
                 start_hour = first_data[11:13] #14
-                last_data = end_date(weibo_url, all_page)
+                last_data = end_date(weibo_url, all_page1)
                 end_time = last_data[0:10]
                 print(start_time+'-------------'+end_time)
                 #第一条时间 与 最后一条时间 不在同一天 不用进入小时
@@ -381,14 +381,15 @@ if __name__ == '__main__':
                     #获取首次搜索的50页数据
                     while p < all_page and flag4:
                         p = p + 1
-                        weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=' + str(p)
+                        #time.sleep(2)
+                        weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&Refer=g&page=' + str(p)
                         print(weibo_urls)
                         flag3 = page_content(weibo_urls)
                         if not flag3:
                             try:
                                 html = get_html(weibo_urls)
                                 today_date = datetime.date.today()
-                                time.sleep(1)
+                                time.sleep(2)
                                 result = get_data(html)
                                 save_data(result, os.getcwd() + '/wade_weibo.csv')
                                 sum = sum + len(result)
@@ -409,6 +410,7 @@ if __name__ == '__main__':
                     if flag6:
                         while p < all_page :
                             p = p + 1
+                            #time.sleep(2)
                             weibo_urls = weibo_url[0:-1]+str(p)
                             print(weibo_urls)
                             flag3 = page_content(weibo_urls)
@@ -416,7 +418,7 @@ if __name__ == '__main__':
                                 try:
                                     html = get_html(weibo_urls)
                                     today_date = datetime.date.today()
-                                    time.sleep(1)
+                                    time.sleep(2)
                                     result = get_data(html)
                                     save_data(result, os.getcwd() + '/wade_weibo.csv')
                                     sum = sum + len(result)
@@ -437,19 +439,19 @@ if __name__ == '__main__':
                     dateend = datetime.datetime.strptime(last_data, '%Y-%m-%d-%H')
                     dateend = dateend + datetime.timedelta(hours=1)
                     dateend = dateend.strftime('%Y-%m-%d-%H')
-                    weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                    weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&' \
                                  'timescope=custom:'+':' \
                                  + dateend + '&Refer=g&page=1'
                     all_page = int(get_all_page(weibo_urls))
 
                     weibo_url = weibo_urls
                     print('爬数据前url' + weibo_url)
-                    all_page = int(get_all_page(weibo_url))
-                    print(all_page)
+                    all_page1 = int(get_all_page(weibo_url))
+                    print(all_page1)
                     first_data = start_date(weibo_url)  # 2018-10-16-14
                     start_time = first_data[0:10]  # 2018-10-16
                     start_hour = first_data[11:13]
-                    last_data = end_date(weibo_url, all_page)
+                    last_data = end_date(weibo_url, all_page1)
                     end_time = last_data[0:10]
                     print(first_data + '-------------' + last_data)
                     print(start_time + '-------------' + end_time)
@@ -458,7 +460,8 @@ if __name__ == '__main__':
                     #获取数据
                     while p < all_page and flag5:
                         p = p + 1
-                        weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                        #time.sleep(2)
+                        weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&' \
                                  'timescope=custom:'+':' \
                                  + dateend + '&Refer=g&page='+str(p)
                         print(weibo_urls)
@@ -467,7 +470,7 @@ if __name__ == '__main__':
                             try:
                                 html = get_html(weibo_urls)
                                 today_date = datetime.date.today()
-                                time.sleep(1)
+                                time.sleep(2)
                                 result = get_data(html)
                                 save_data(result, os.getcwd() + '/wade_weibo.csv')
                                 sum = sum + len(result)
@@ -481,21 +484,22 @@ if __name__ == '__main__':
                         elif all_page > 1 and flag3:
                             lost.append(weibo_urls)
                     p = 0
-                    if all_page < 50 or all_page<50:
+                    if all_page < 50 or all_page1<50:
                         flag2 = False
 
                 #第一条时间 与 最后一条时间 在同一天 进入每小时取
                 if start_time == end_time:
                     print(start_time + '-------------' + end_time)
                     for hours in range(int(start_hour), -1, -1):
-                            weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                            weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&' \
                                          'timescope=custom:' + start_time + '-' + str(hours) + ':' \
                                          + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
                             hour_all_page = int(get_all_page(weibo_urls))
                             #获取数据
                             while p < hour_all_page:
                                 p = p + 1
-                                weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                                #time.sleep(2)
+                                weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&' \
                                              'timescope=custom:' + start_time + '-' + str(hours) + ':' \
                                              + start_time + '-' + str(hours + 1) + '&Refer=g&page='+str(p)
                                 print(weibo_urls)
@@ -504,7 +508,7 @@ if __name__ == '__main__':
                                     try:
                                         html = get_html(weibo_urls)
                                         today_date = datetime.date.today()
-                                        time.sleep(1)
+                                        time.sleep(2)
                                         result = get_data(html)
                                         save_data(result, os.getcwd() + '/wade_weibo.csv')
                                         sum = sum + len(result)
@@ -519,7 +523,7 @@ if __name__ == '__main__':
                                     lost.append(weibo_urls)
                             p = 0
 
-                    weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                    weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&' \
                                  'timescope=custom:'+':' \
                                  + start_time +'-0&Refer=g&page=1'
                     print(weibo_url)
@@ -532,7 +536,8 @@ if __name__ == '__main__':
         if all_page <50 and flag2:
             while p < all_page:
                 p = p + 1
-                weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page='+str(p)
+                #time.sleep(2)
+                weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐&typeall=1&suball=1&Refer=g&page='+str(p)
                 print(weibo_urls)
                 #页面有没有内容
                 flag3 = page_content(weibo_urls)
@@ -540,7 +545,7 @@ if __name__ == '__main__':
                     try:
                         html = get_html(weibo_urls)
                         today_date = datetime.date.today()
-                        time.sleep(1)
+                        time.sleep(2)
                         result = get_data(html)
                         save_data(result, os.getcwd() + '/wade_weibo.csv')
                         sum = sum + len(result)
