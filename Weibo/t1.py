@@ -91,9 +91,55 @@ import time
 #                  + dateend + '&Refer=g&page=1'
 #     print(weibo_urls)
 
-start_time  = '2018-10-16'
-p=2
-weibo_url = 'https://s.weibo.com/weibo?q=邓超&typeall=1&suball=1&' \
-             'timescope=custom:'+':' \
-             + start_time +'-0&Refer=g&page=1'
-print(weibo_url[0:-1]+str(p))
+# start_time  = '2018-10-16'
+# p=2
+# weibo_url = 'https://s.weibo.com/weibo?q=邓超&typeall=1&suball=1&' \
+#              'timescope=custom:'+':' \
+#              + start_time +'-0&Refer=g&page=1'
+# print(weibo_url[0:-1]+str(p))
+
+# lost = ['1', '2', '3', '4', '5', '1', '1', '1', '1', '1',]
+# lost1=[]
+# flag = 1
+# while True:
+#     for i in range(len(lost)):
+#         print('第'+str(flag)+'次重刷')
+#         # weibo_urls = lost[i]
+#         # print(weibo_urls)
+#         # # 页面有没有内容
+#         # flag3 = page_content(weibo_urls)
+#         # if not flag3:
+#         #     try:
+#         #         html = get_html(weibo_urls)
+#         #         today_date = datetime.date.today()
+#         #         time.sleep(0.5)
+#         #         result = get_data(html)
+#         #         save_data(result, os.getcwd() + '/wade_weibo.csv')
+#         #         sum = sum + len(result)
+#         #         # mid_sum = mid_sum + data_count(weibo_urls)
+#         #         print('当前页抓取条数' + str(len(result)))
+#         #         if len(result) == 0:
+#         #             lost1.append(weibo_urls)
+#         #     except Exception as error:
+#         #         print(error)
+#         #         continue
+#         # elif flag3:
+#         #     lost1.append(weibo_urls)
+#     lost = lost1
+#     lost1 = []
+#     flag = flag+1
+#     print('----------')
+#     if flag>3:
+#         break
+
+list = []
+list1 = ['1','2','3']
+a='a'
+b='b'
+list.append(list1)
+list.append(a)
+list.append(b)
+for i in range(0,3):
+    print(list[i])
+
+
