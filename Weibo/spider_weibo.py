@@ -364,7 +364,6 @@ def get_reset_data(url):
 
 if __name__ == '__main__':
     # 设置cookies
-
     set_cookies(os.getcwd() + '/weibo_cookie.txt')
     start = datetime.datetime.now()
     print("时间 :", start)
@@ -378,7 +377,7 @@ if __name__ == '__main__':
     reset = 1  # 重刷获取失败的连接
     lost_get = []
     lost_get1 = []
-    while flag and flag2:
+    while flag :
         weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
         html = get_html(weibo_url)
         all_page = int(get_all_page(html))
@@ -386,8 +385,17 @@ if __name__ == '__main__':
 
         # 总页数有50页
         if all_page == 50:  # 第一条时间
-            while flag2:
-                html = get_html(weibo_url)
+            while True:
+                while True:
+                    try:
+                        html = get_html(weibo_url)
+                        if not page_content(html):
+                            break
+                        else:
+                            time.sleep(1)
+                    except Exception as e:
+                        print('get_html ERROR:', e)
+                        time.sleep(random.choice(range(5, 15)))
                 all_page1 = int(get_all_page(html))
                 first_data = start_date(html)  # 2018-10-16-14
                 start_time = first_data[0:10]  # 2018-10-16
@@ -440,13 +448,24 @@ if __name__ == '__main__':
                     weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
                                  'timescope=custom:' + ':' \
                                  + dateend + '&Refer=g&page=1'
-                    html = get_html(weibo_urls)
+
+                    #可能访问不了url
+                    while True:
+                        try:
+                            html = get_html(weibo_urls)
+                            if not page_content(html):
+                                break
+                            else:
+                                time.sleep(1)
+                        except Exception as e:
+                            print('get_html ERROR:', e)
+                            time.sleep(random.choice(range(5, 15)))
+
                     all_page = int(get_all_page(html))
 
                     weibo_url = weibo_urls
                     print('爬数据前url' + weibo_url)
                     all_page1 = int(get_all_page(html))
-                    print(all_page1)
                     first_data = start_date(html)  # 2018-10-16-14
                     start_time = first_data[0:10]  # 2018-10-16
                     start_hour = first_data[11:13]
@@ -455,7 +474,7 @@ if __name__ == '__main__':
                     print(start_time + '-------------' + end_time)
                     if start_time == end_time:
                         flag_to_hour = False
-                    # 获取数据
+                    # 获取数据 该50页第一条与最后一条时间不一样
                     if flag_to_hour:
                         total_sum = total_sum + get_data(weibo_url)
                         # while p < all_page :
@@ -486,7 +505,8 @@ if __name__ == '__main__':
                     # p = 0
                     # 如果页数少于50 结束
                     if all_page1 < 50:
-                        flag2 = False
+                        break
+                        #flag2 = False
 
                 # 第一条时间 与 最后一条时间 在同一天 进入每小时取
                 if start_time == end_time:
@@ -536,9 +556,10 @@ if __name__ == '__main__':
             flag = False
 
         # 总页数没有50页
-        if all_page < 50 and flag2:
+        if all_page < 50 :
             total_sum = total_sum + get_data(weibo_url)
             flag = False
+
 
     print(len(lost_get))
     if (len(lost_get) > 0):
