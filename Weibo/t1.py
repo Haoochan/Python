@@ -5,8 +5,11 @@ import time
 
 
 # now_time = datetime.datetime.now()
-# now1 = now_time.strftime('%Y-%m-%d %H:%M:%S')
+# now1 = now_time.strftime('%Y-%m-%d %H:%M:%S.%f')
+# csv_name = 'wade_weibo.csv'
+# new_name = now1+csv_name
 # print(now1)
+# print(new_name)
 # time.sleep(1)
 # now_time = datetime.datetime.now()
 # now2 = now_time.strftime('%Y-%m-%d %H:%M:%S')
@@ -132,14 +135,18 @@ import time
 #     if flag>3:
 #         break
 
-list = []
-list1 = ['1','2','3']
-a='a'
-b='b'
-list.append(list1)
-list.append(a)
-list.append(b)
-for i in range(0,3):
-    print(list[i])
+# a = ['d','s','da',['a','d']]
+# b= [['a','d'],'gd','afa']
+# a = a+b
+# for i in range(len(a)):
+#     print(a[i])
+url = {
+    'home_page':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
+    'page_by_hour':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                                     'timescope=custom:' + start_time + '-' + str(hours) + ':' \
+                                     + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
+
+}
+
 
 
