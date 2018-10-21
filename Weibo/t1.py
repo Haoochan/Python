@@ -135,18 +135,18 @@ import time
 #     if flag>3:
 #         break
 
-# a = ['d','s','da',['a','d']]
-# b= [['a','d'],'gd','afa']
-# a = a+b
-# for i in range(len(a)):
-#     print(a[i])
-url = {
-    'home_page':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
-    'page_by_hour':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
-                                     'timescope=custom:' + start_time + '-' + str(hours) + ':' \
-                                     + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
-
-}
+result_buffer = []
+result= [['a','1'],['b','2'],['c','3'],['d','4'],]
+result_buffer = result_buffer+result+result
+for i in range(len(result_buffer)):
+    print(result_buffer[i])
+# url = {
+#     'home_page':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
+#     'page_by_hour':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+#                                      'timescope=custom:' + start_time + '-' + str(hours) + ':' \
+#                                      + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
+#
+# }
 
 
 
