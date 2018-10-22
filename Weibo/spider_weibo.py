@@ -5,6 +5,7 @@ import csv
 import random
 import time
 import datetime
+import shutil
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
 
@@ -23,8 +24,22 @@ request_headers = {
     #               'Chrome/63.0.3239.132 Safari/537.36'
 }
 
-urls = {
-
+start_time = ''
+hours = 0
+dateend=''
+keyword = '伊卡璐洗发露'
+csv_limit = 1000
+url = {
+    'home_page':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&Refer=g&page=1',
+    'page_by_lastdata':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
+                         'timescope=custom:' + ':' \
+                         + dateend + '&Refer=g&page=1',
+    'page_by_hour':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
+                                     'timescope=custom:' + start_time + '-' + str(hours) + ':' \
+                                     + start_time + '-' + str(hours + 1) + '&Refer=g&page=1',
+    'page_after_hour':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
+                                'timescope=custom:' + ':' \
+                                + start_time + '-0&Refer=g&page=1'
 }
 
 # 获取html源文件方法
@@ -35,10 +50,7 @@ def get_html(url):
         try:
             rep = requests.get(url, headers=request_headers, timeout=timeout)
             rep.encoding = 'UTF-8'
-            # if not page_content(rep.text):
             break
-            # else:
-            #     time.sleep(1)
         except Exception as e:
             print('get_html ERROR:', e)
             time.sleep(random.choice(range(5, 15)))
@@ -130,7 +142,7 @@ def lookup_data(html_text):
 
             # 获取Urls 有视频的没有urls
             # 判断是否有视频
-            videos_count = data_info.find_all('div', {'class': 'media media-video-a'})
+            videos_count = data_info.find_all('div', {'class': 'thumbnail'})
             url_info = txt_count
             urls = []
             # 有全文
@@ -218,7 +230,7 @@ def save_data(data, name):
         print('save_data:', e)
 
 
-# 跳转下一页 获取总页数
+# 获取总页数
 def get_all_page(html_text):
     target = SoupStrainer('div', {'class': 'm-page'})
     bs = BeautifulSoup(html_text, "html.parser", parse_only=target)
@@ -306,6 +318,7 @@ def get_data(url):
     total_pages = int(get_all_page(html))
     p = 0
     sum = 0
+    lost_get = []
     result_buffer = []
     count = []
     while p < total_pages:
@@ -332,6 +345,7 @@ def get_data(url):
 
     count.append(sum)
     count.append(result_buffer)
+    count.append(lost_get)
     return count
 
 
@@ -339,6 +353,8 @@ def get_data(url):
 def get_reset_data(lost_get,total):
     reset = 1  # 重刷获取失败的连接
     lost_get1 = []
+    count = []
+    result_buffer = []
     print(len(lost_get))
     if (len(lost_get) > 0):
         for i in range(len(lost_get)):
@@ -377,7 +393,10 @@ def get_reset_data(lost_get,total):
     if (len(lost_get) > 0):
         for i in range(len(lost_get)):
             print('重刷后仍然失败' + lost_get[i])
-    return total
+
+    count.append(total)
+    count.append(result_buffer)
+    return count
 
 
 # 写入
@@ -385,10 +404,15 @@ def make_csv(result_buffer):
     print('写入数据')
     now_time = datetime.datetime.now()
     now = now_time.strftime('%Y-%m-%d %H-%M-%S.%f')
-    csv_name = 'wade_weibo.csv'
+    csv_name = keyword+'.csv'
+    #创建keyword 文件夹
+    file_path = os.getcwd()[:-5] + keyword + '\\'
+    if not os.path.exists(file_path):
+        os.makedirs(file_path)
     for i in range(0,len(result_buffer)):
-        save_data(result_buffer[i], os.getcwd() + '/' + now + csv_name)
+        save_data(result_buffer[i], file_path+'/' + now + csv_name)
     result_buffer.clear()
+    shutil.copy(file_path+'/' + now + csv_name,'E:/GitHub/Python/伊卡璐洗发露1')
 
 
 #获取以最后一条微博时间为筛选条件的url
@@ -396,24 +420,24 @@ def get_last_data_url(last_data):
     dateend = datetime.datetime.strptime(last_data, '%Y-%m-%d-%H')
     dateend = dateend + datetime.timedelta(hours=1)
     dateend = dateend.strftime('%Y-%m-%d-%H')
-    weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+    weibo_urls = 'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
                  'timescope=custom:' + ':' \
                  + dateend + '&Refer=g&page=1'
+    # weibo_urls = url['page_by_lastdata']
     return weibo_urls
 
-
-if __name__ == '__main__':
-    start = datetime.datetime.now()
-    print("时间 :", start)
-    total = 0 #超过多少条 存入csv
-    total_count = 0 #统计获取总数
+#方法主体
+def my_function():
+    total = 0  # 超过多少条 存入csv
+    total_count = 0  # 统计获取总数
     flag_first_fiftypage = True  # 第一次拿50条
-    flag_to_diffday = True  # 在不同天内遇到同一天 跳去按时间段爬
+    flag_to_diffday = True   # 在不同天内遇到同一天 跳去按时间段爬
     flag_after_hour = False  # 爬完时间段 跳回下一天
     lost_get = []
     result_buffer = []
     while True:
-        weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
+        # weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
+        weibo_url = url['home_page']
         html = get_html(weibo_url)
         all_page = int(get_all_page(html))
         print('首页总页数' + str(all_page))
@@ -422,8 +446,9 @@ if __name__ == '__main__':
         if all_page < 50:
             count = get_data(weibo_url)
             total = total + count[0]
-            total_count = total_count+count[0]
+            total_count = total_count + count[0]
             result_buffer = result_buffer + count[1]
+            lost_get = lost_get + count[2]
             count.clear()
             if total > 1000:
                 make_csv(result_buffer)
@@ -453,8 +478,9 @@ if __name__ == '__main__':
                         total = total + count[0]
                         total_count = total_count + count[0]
                         result_buffer = result_buffer + count[1]
+                        lost_get = lost_get + count[2]
                         count.clear()
-                        if total > 1000:
+                        if total > csv_limit:
                             make_csv(result_buffer)
                             total = 0
 
@@ -467,8 +493,9 @@ if __name__ == '__main__':
                         total = total + count[0]
                         total_count = total_count + count[0]
                         result_buffer = result_buffer + count[1]
+                        lost_get = lost_get + count[2]
                         count.clear()
-                        if total > 1000:
+                        if total > csv_limit:
                             make_csv(result_buffer)
                             total = 0
 
@@ -476,6 +503,7 @@ if __name__ == '__main__':
 
                     # 获取最后一条微博时间 改下一个url
                     weibo_urls = get_last_data_url(last_data)
+
                     while True:
                         html = get_html(weibo_urls)
                         if not page_content(html):
@@ -490,7 +518,7 @@ if __name__ == '__main__':
                     last_data = end_date(weibo_url, all_page)
                     end_time = last_data[0:10]
                     print(start_time + '-------------' + end_time)
-                    #如果遇到第一条与最后一条时间相同 跳去按时间段获取
+                    # 如果遇到第一条与最后一条时间相同 跳去按时间段获取
                     if start_time == end_time:
                         flag_to_diffday = False
                     # 获取数据 该50页第一条与最后一条时间不一样
@@ -499,8 +527,9 @@ if __name__ == '__main__':
                         total = total + count[0]
                         total_count = total_count + count[0]
                         result_buffer = result_buffer + count[1]
+                        lost_get = lost_get + count[2]
                         count.clear()
-                        if total > 1000:
+                        if total > csv_limit:
                             make_csv(result_buffer)
                             total = 0
 
@@ -512,37 +541,47 @@ if __name__ == '__main__':
                 if start_time == end_time:
                     print(start_time + '-------------' + end_time)
                     for hours in range(int(start_hour), -1, -1):
-                        weibo_urls = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                        weibo_urls = 'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
                                      'timescope=custom:' + start_time + '-' + str(hours) + ':' \
                                      + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
+                        # weibo_urls = url['page_by_hour']
                         # 获取数据
                         count = get_data(weibo_urls)
                         total = total + count[0]
                         total_count = total_count + count[0]
                         result_buffer = result_buffer + count[1]
+                        lost_get = lost_get + count[2]
                         count.clear()
-                        if total > 1000:
+                        if total > csv_limit:
                             make_csv(result_buffer)
                             total = 0
 
                     # 按小时获取完这一天 url改成这一天之前的
-                    weibo_url = 'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+                    weibo_url = 'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
                                 'timescope=custom:' + ':' \
                                 + start_time + '-0&Refer=g&page=1'
+                    # weibo_url = url['page_after_hour']
                     print(weibo_url)
                     flag_first_fiftypage = False
                     flag_after_hour = True
 
             break
 
-    #重刷页面
-    total_count = get_reset_data(lost_get,total_count)
-    # total_count = total_count + total
-    #创建csv
+    # 重刷页面
+    count = get_reset_data(lost_get, total_count)
+    total_count = count[0]
+    result_buffer = result_buffer+count[1]
+    # 剩下数据写入csv
     make_csv(result_buffer)
 
     print('-------------')
     print('抓取条数' + str(total_count))
+
+
+if __name__ == '__main__':
+    start = datetime.datetime.now()
+    print("时间 :", start)
+    my_function()
     end = datetime.datetime.now()
     print("结束时间 :", end)
     print(end - start)

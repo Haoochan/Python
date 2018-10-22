@@ -546,7 +546,6 @@ def my_function():
             break
 
     # 重刷页面
-    # total_count = get_reset_data(lost_get, total_count,result_buffer)
     count = get_reset_data(lost_get, total_count)
     total_count = count[0]
     result_buffer = result_buffer+count[1]

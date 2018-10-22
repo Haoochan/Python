@@ -2,6 +2,23 @@ from bs4 import BeautifulSoup
 import re
 import datetime
 import time
+import os
+import shutil
+import readCSV
+from fake_useragent import UserAgent
+
+ua = UserAgent(use_cache_server=False)
+
+#最常用的方式
+#写爬虫最实用的是可以随意变换headers，一定要有随机性。支持随机生成请求头
+print(ua.chrome)
+print(ua.chrome)
+print(ua.chrome)
+print(ua.chrome)
+print(ua.chrome)
+print(ua.chrome)
+
+
 
 
 # now_time = datetime.datetime.now()
@@ -135,18 +152,48 @@ import time
 #     if flag>3:
 #         break
 
-result_buffer = []
-result= [['a','1'],['b','2'],['c','3'],['d','4'],]
-result_buffer = result_buffer+result+result
-for i in range(len(result_buffer)):
-    print(result_buffer[i])
+# result_buffer = []
+# result= [['a','1'],['b','2'],['c','3'],['d','4'],]
+# result_buffer = result_buffer+result+result
+# for i in range(len(result_buffer)):
+#     print(result_buffer[i])
+
+# start_time = ''
+# hours = 0
+# dateend=''
+# keyword = '伊卡璐洗发露'
 # url = {
-#     'home_page':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&Refer=g&page=1'
-#     'page_by_hour':'https://s.weibo.com/weibo?q=伊卡璐洗发露&typeall=1&suball=1&' \
+#     'home_page':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&Refer=g&page=1',
+#     'page_by_lastdata':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
+#                          'timescope=custom:' + ':' \
+#                          + dateend + '&Refer=g&page=1',
+#     'page_by_hour':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
 #                                      'timescope=custom:' + start_time + '-' + str(hours) + ':' \
-#                                      + start_time + '-' + str(hours + 1) + '&Refer=g&page=1'
-#
+#                                      + start_time + '-' + str(hours + 1) + '&Refer=g&page=1',
+#     'page_after_hour':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
+#                                 'timescope=custom:' + ':' \
+#                                 + start_time + '-0&Refer=g&page=1'
 # }
+# print(url['home_page'])
+# print(url['page_by_lastdata'])
+# print(url['page_by_hour'])
+# print(url['page_after_hour'])
+
+# keyword = '邓超'
+# file_path = os.getcwd()[:-5]+keyword+'\\'
+# if not os.path.exists(file_path):
+#         os.makedirs(file_path)
 
 
+# os.mkdir(os.getcwd()[:-5]+'test\\')
+# dir_name = os.getcwd()[:-5]+'伊卡璐洗发露\\'
+# new_dir = os.getcwd()[:-5]+'test\\'
+# print(os.listdir(dir_name))
+# print(len(os.listdir(dir_name)))
+# file_list = []
+# for i in range(len(os.listdir(dir_name))):
+#     file_list.append(os.listdir(dir_name)[i])
+# for i in range(len(os.listdir(dir_name))):
+#     shutil.move(dir_name+file_list[i], new_dir)
 
+# shutil.copy('E:/GitHub/Python/伊卡璐洗发露/text.txt',new_dir)
