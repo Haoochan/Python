@@ -5,19 +5,34 @@ import time
 import os
 import shutil
 import readCSV
-from fake_useragent import UserAgent
-
-ua = UserAgent(use_cache_server=False)
+# from fake_useragent import UserAgent
+#
+# ua = UserAgent(use_cache_server=False)
 
 #最常用的方式
 #写爬虫最实用的是可以随意变换headers，一定要有随机性。支持随机生成请求头
-print(ua.chrome)
-print(ua.chrome)
-print(ua.chrome)
-print(ua.chrome)
-print(ua.chrome)
-print(ua.chrome)
-
+# print(ua.chrome)
+# print(ua.chrome)
+# print(ua.chrome)
+# print(ua.chrome)
+# print(ua.chrome)
+# print(ua.chrome)
+#
+# request_headers = {
+#     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+#     'Accept-Encoding': 'gzip, deflate, br',
+#     'Accept-Language': 'zh-CN,zh;q=0.9',
+#     'Connection': 'keep-alive',
+#     'Cache-Control': 'max-age=0',
+#     'DNT': '1',
+#     'Upgrade-Insecure-Requests': '1',
+#     # 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+#     #               'Chrome/67.0.3396.62 Safari/537.36'
+#     # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
+#     #               'Chrome/63.0.3239.132 Safari/537.36'
+# }
+# request_headers.update({'User-Agent':ua.chrome})
+# print(request_headers)
 
 
 
@@ -158,26 +173,7 @@ print(ua.chrome)
 # for i in range(len(result_buffer)):
 #     print(result_buffer[i])
 
-# start_time = ''
-# hours = 0
-# dateend=''
-# keyword = '伊卡璐洗发露'
-# url = {
-#     'home_page':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&Refer=g&page=1',
-#     'page_by_lastdata':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
-#                          'timescope=custom:' + ':' \
-#                          + dateend + '&Refer=g&page=1',
-#     'page_by_hour':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
-#                                      'timescope=custom:' + start_time + '-' + str(hours) + ':' \
-#                                      + start_time + '-' + str(hours + 1) + '&Refer=g&page=1',
-#     'page_after_hour':'https://s.weibo.com/weibo?q='+keyword+'&typeall=1&suball=1&' \
-#                                 'timescope=custom:' + ':' \
-#                                 + start_time + '-0&Refer=g&page=1'
-# }
-# print(url['home_page'])
-# print(url['page_by_lastdata'])
-# print(url['page_by_hour'])
-# print(url['page_after_hour'])
+
 
 # keyword = '邓超'
 # file_path = os.getcwd()[:-5]+keyword+'\\'
@@ -197,3 +193,9 @@ print(ua.chrome)
 #     shutil.move(dir_name+file_list[i], new_dir)
 
 # shutil.copy('E:/GitHub/Python/伊卡璐洗发露/text.txt',new_dir)
+
+# a = '2019-01-01-0'
+# datestart = datetime.datetime.strptime(a, '%Y-%m-%d-%H')
+# datestart=datestart-datetime.timedelta(days=1)
+# print(datestart.strftime('%Y-%m-%d-%H'))
+
