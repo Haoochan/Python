@@ -44,7 +44,7 @@ class Logger(object):
         pass
 
 #控制台日志
-sys.stdout = Logger("E:\\GitHub\\Python\\text_log_7.txt")
+sys.stdout = Logger("E:\\GitHub\\Python\\text_log_3.txt")
 
 ua = UserAgent(use_cache_server=False)
 
@@ -151,7 +151,7 @@ proxy = [
 client = Client("http://10.13.0.80:9870/", root="/", timeout=10000, session=False)
 
 csv_limit = 1000
-file_path = 'E:\\GitHub\\Python\\debug'#写入数据目录
+file_path = 'E:\\GitHub\\Python\\test4'#写入数据目录
 upload_file_path='E:\\GitHub\\Python\\upload'#上传目录地址
 #url字典
 url = {
@@ -655,25 +655,20 @@ def get_reset_data(lost_get,total):
     while True:
         print('第' + str(reset) + '次重刷')
         lenth = len(lost_get)
-        for i in range(len(lost_get)):
-            weibo_urls = lost_get[i]
-            print(weibo_urls)
-            # 页面有没有内容
-            html = get_html(weibo_urls)
-            flag_content = page_content(html)
-            if not flag_content:
-                try:
-                    result = lookup_data(html)
-                    result_buffer.append(result)
-                    total = total + len(result)
-                    print('当前页抓取条数' + str(len(result)))
-                    if len(result) == 0:
-                        lost_get1.append(weibo_urls)
-                except Exception as error:
-                    print(error)
-                    continue
-            elif flag_content:
-                lost_get1.append(weibo_urls)
+
+        reset_threads = []
+        for i in range(lenth):
+            i = MyThread(get_reset_data_threads,args=(lost_get[i],))
+            reset_threads.append(i)
+        for i in reset_threads:
+            i.setDaemon(True)
+            i.start()
+        for i in reset_threads:
+            i.join()
+        for i in reset_threads:
+            total = total + i.get_result()[0]
+            lost_get1  = lost_get1 + i.get_result()[1]
+
         lost_get = lost_get1
         lost_get1 = []
         reset = reset + 1
@@ -688,6 +683,34 @@ def get_reset_data(lost_get,total):
 
     count.append(total)
     count.append(result_buffer)
+    return count
+
+
+#分线程获取重刷页面
+def get_reset_data_threads(url):
+    result_buffer = []
+    lost_get1 = []
+    count = []
+    total = 0
+    print(url)
+    # 页面有没有内容
+    html = get_html(url)
+    flag_content = page_content(html)
+    if not flag_content:
+        try:
+            result = lookup_data(html)
+            result_buffer.append(result)
+            total = len(result)
+            print('当前页抓取条数' + str(len(result)))
+            if len(result) == 0:
+                lost_get1.append(url)
+        except Exception as error:
+            print(error)
+    elif flag_content:
+        lost_get1.append(url)
+
+    count.append(total)
+    count.append(lost_get1)
     return count
 
 # 写入csv
@@ -935,7 +958,7 @@ def my_function(keyword,start_data,end_data):
         result_buffer = result_buffer+count[1]
     if len(result_buffer)>0:
     # 剩下数据写入csv
-        print('写入重刷数据'+str(total)+'-----'+ start_data + '-----' + end_data)
+        print('写入重刷数据'+'-----'+ start_data + '-----' + end_data)
         make_csv(result_buffer, keyword)
     print(keyword+'抓取条数' + str(total_count)+'---'+start_data+'---'+end_data)
     return total_count
@@ -968,29 +991,29 @@ def upload_csv():
 
 threads = []
 #2018-2019
-t1 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2019-01-01-0',))
-threads.append(t1)
-# t2 = MyThread(my_function,args=('伊卡璐','2018-05-01-0','2018-09-01-0',))
+# t1 = MyThread(my_function,args=('伊卡璐','2018-01-01-0','2019-01-01-0',))
+# threads.append(t1)
+# t2 = MyThread(my_function,args=('伊卡璐','2017-01-01-0','2018-01-01-0',))
 # threads.append(t2)
-# t3 = MyThread(my_function,args=('伊卡璐','2018-01-01-0','2018-05-01-0',))
+# t3 = MyThread(my_function,args=('伊卡璐','2016-01-01-0','2017-01-01-0',))
 # threads.append(t3)
 # # 2017-2018
-# t4 = MyThread(my_function,args=('伊卡璐','2017-09-01-0','2018-01-01-0',))
+# t4 = MyThread(my_function,args=('伊卡璐','2015-01-01-0','2016-01-01-0',))
 # threads.append(t4)
-# t5 = MyThread(my_function,args=('伊卡璐','2017-05-01-0','2017-09-01-0',))
+# t5 = MyThread(my_function,args=('伊卡璐','2014-01-01-0','2015-01-01-0',))
 # threads.append(t5)
-# t6 = MyThread(my_function,args=('伊卡璐','2017-01-01-0','2017-05-01-0',))
+# t6 = MyThread(my_function,args=('伊卡璐','2013-01-01-0','2014-01-01-0',))
 # threads.append(t6)
 # #2016-2017
-# t7 = MyThread(my_function,args=('伊卡璐','2016-09-01-0','2017-01-01-0',))
+# t7 = MyThread(my_function,args=('伊卡璐','2012-01-01-0','2013-01-01-0',))
 # threads.append(t7)
-# t8 = MyThread(my_function,args=('伊卡璐','2016-05-01-0','2016-09-01-0',))
+# t8 = MyThread(my_function,args=('伊卡璐','2011-01-01-0','2012-01-01-0',))
 # threads.append(t8)
-# t9 = MyThread(my_function,args=('伊卡璐','2016-01-01-0','2016-05-01-0',))
+# t9 = MyThread(my_function,args=('伊卡璐','2010-01-01-0','2011-01-01-0',))
 # threads.append(t9)
-# #2015-2016
-# t10 = MyThread(my_function,args=('伊卡璐','2015-09-01-0','2016-01-01-0',))
-# threads.append(t10)
+#2015-2016
+t10 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2011-01-01-0',))
+threads.append(t10)
 # t11 = MyThread(my_function,args=('伊卡璐','2015-05-01-0','2015-09-01-0',))
 # threads.append(t11)
 # t12 = MyThread(my_function,args=('伊卡璐','2015-01-01-0','2015-05-01-0',))

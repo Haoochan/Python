@@ -45,7 +45,7 @@ class Logger(object):
         pass
 
 #控制台日志
-sys.stdout = Logger("E:\\GitHub\\Python\\text_log_8.txt")
+sys.stdout = Logger("E:\\GitHub\\Python\\text_log_2.txt")
 
 ua = UserAgent(use_cache_server=False)
 
@@ -152,7 +152,7 @@ proxy = [
 client = Client("http://10.13.0.80:9870/", root="/", timeout=10000, session=False)
 
 csv_limit = 1000
-file_path = 'E:\\GitHub\\Python\\test1'#写入数据目录
+file_path = 'E:\\GitHub\\Python\\test4'#写入数据目录
 upload_file_path='E:\\GitHub\\Python\\upload'#上传目录地址
 #url字典
 url = {
@@ -969,12 +969,12 @@ def upload_csv():
 
 threads = []
 #2018-2019
-t1 = MyThread(my_function,args=('伊卡璐','2016-01-01-0','2019-01-01-0',))
+t1 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2011-01-01-0',))
 threads.append(t1)
-t2 = MyThread(my_function,args=('伊卡璐','2013-01-01-0','2016-01-01-0',))
-threads.append(t2)
-t3 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2013-01-01-0',))
-threads.append(t3)
+# t2 = MyThread(my_function,args=('伊卡璐','2013-01-01-0','2016-01-01-0',))
+# threads.append(t2)
+# t3 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2013-01-01-0',))
+# threads.append(t3)
 # # 2017-2018
 # t4 = MyThread(my_function,args=('伊卡璐','2017-09-01-0','2018-01-01-0',))
 # threads.append(t4)
