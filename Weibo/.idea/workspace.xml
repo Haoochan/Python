@@ -114,32 +114,36 @@
     <session id="-1850885264">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.381" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.56" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="11415" />
+          <entry key="py" value="14916" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="11415" />
+          <entry key="Python" value="14916" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="36" />
+          <entry key="py" value="56" />
+          <entry key="pyi" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="36" />
+          <entry key="Python" value="56" />
+          <entry key="PythonStub" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -147,118 +151,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readCSV.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spider_weibo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="647" selection-start-line="647" selection-end-line="647" />
-              <folding>
-                <element signature="e#17#26#0" expanded="true" />
-                <element signature="e#304#926#0" />
-                <element signature="e#1069#1821#0" />
-                <element signature="e#1860#2284#0" />
-                <element signature="e#2328#8300#0" />
-                <element signature="e#2640#8283#0" />
-                <element signature="e#8622#8912#0" />
-                <element signature="e#8957#9220#0" />
-                <element signature="e#9267#10040#0" />
-                <element signature="e#10094#11215#0" />
-                <element signature="e#11259#12197#0" />
-                <element signature="e#12254#13652#0" />
-                <element signature="e#13693#14186#0" />
-                <element signature="e#14249#14673#0" />
-                <element signature="e#14723#15227#0" />
-                <element signature="e#15258#21516#0" />
-                <element signature="e#15811#16159#0" />
-                <element signature="e#21556#22290#0" />
-                <element signature="e#22324#22750#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1361">
-              <caret line="358" column="4" selection-start-line="358" selection-start-column="4" selection-end-line="358" selection-end-column="4" />
+            <state relative-caret-position="3003">
+              <caret line="993" selection-start-line="993" selection-end-line="993" />
               <folding>
                 <element signature="e#17#26#0" expanded="true" />
-                <element signature="e#273#926#0" />
-                <element signature="e#2114#8086#0" />
-                <element signature="e#2426#8069#0" />
-                <element signature="e#8127#8347#0" />
-                <element signature="e#8391#8681#0" />
-                <element signature="e#8726#8989#0" />
-                <element signature="e#9036#9809#0" />
-                <element signature="e#9863#10967#0" />
-                <element signature="e#11011#11949#0" />
-                <element signature="e#12006#13404#0" />
-                <element signature="e#13693#14186#0" />
-                <element signature="e#14249#14493#0" />
-                <element signature="e#14710#15205#0" />
-                <element signature="e#14973#15321#0" />
-                <element signature="e#21556#22267#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="553" column="27" selection-start-line="553" selection-start-column="27" selection-end-line="553" selection-end-column="27" />
-              <folding>
-                <element signature="e#17#26#0" expanded="true" />
-                <element signature="e#290#912#0" />
-                <element signature="e#966#2065#0" />
-                <element signature="e#1103#1945#0" />
-                <element signature="e#2029#2467#0" />
-                <element signature="e#2453#8425#0" />
-                <element signature="e#8466#8703#0" />
-                <element signature="e#9087#9350#0" />
-                <element signature="e#9397#10170#0" />
-                <element signature="e#10323#11832#0" />
-                <element signature="e#11582#12520#0" />
-                <element signature="e#12577#13953#0" />
-                <element signature="e#14005#14462#0" />
-                <element signature="e#14525#14769#0" />
-                <element signature="e#14819#15274#0" />
-                <element signature="e#16140#16201#0" />
-                <element signature="e#15859#16215#0" />
-                <element signature="e#16491#17176#0" />
-                <element signature="e#17677#18166#0" />
-                <element signature="e#19404#20134#0" />
-                <element signature="e#20161#21727#0" />
-                <element signature="e#21791#21914#0" />
-                <element signature="e#21948#22000#0" />
-                <element signature="e#22126#22772#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testThread.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <marker date="1540459717692" expanded="true" signature="81:86" ph="..." />
-                <marker date="1540459717692" expanded="true" signature="81:120" ph="..." />
-                <marker date="1540459717692" expanded="true" signature="132:133" ph="..." />
-                <marker date="1540459717692" expanded="true" signature="132:193" ph="..." />
-                <marker date="1540459717692" expanded="true" signature="132:317" ph="..." />
+                <element signature="e#327#637#0" />
+                <element signature="e#677#923#0" />
+                <element signature="e#1057#1679#0" />
+                <element signature="e#1732#3807#0" />
+                <element signature="e#4032#4874#0" />
+                <element signature="e#5442#12260#0" />
+                <element signature="e#12301#12550#0" />
+                <element signature="e#12594#12884#0" />
+                <element signature="e#12934#13197#0" />
+                <element signature="e#13244#14017#0" />
+                <element signature="e#14071#15656#0" />
               </folding>
             </state>
           </provider>
@@ -267,7 +176,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testFTP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
+            <state relative-caret-position="492">
               <caret line="44" selection-start-line="44" selection-end-line="44" selection-end-column="24" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -279,36 +188,106 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testIP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
+            <state relative-caret-position="164">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#35#501#0" />
-                <element signature="e#558#689#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/t2.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/t1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="201" selection-start-line="201" selection-end-line="201" />
+            <state relative-caret-position="-614">
+              <caret line="896" column="30" selection-start-line="896" selection-start-column="30" selection-end-line="896" selection-end-column="30" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#17#26#0" expanded="true" />
+                <element signature="e#287#597#0" />
+                <element signature="e#637#883#0" />
+                <element signature="e#1019#1641#0" />
+                <element signature="e#1694#2793#0" />
+                <element signature="e#4019#4861#0" />
+                <element signature="e#4901#5385#0" />
+                <element signature="e#5429#12327#0" />
+                <element signature="e#12368#12617#0" />
+                <element signature="e#12661#12951#0" />
+                <element signature="e#13001#13264#0" />
+                <element signature="e#13311#14084#0" />
+                <element signature="e#14138#15721#0" />
+                <element signature="e#15765#18054#0" />
+                <element signature="e#18121#19045#0" />
+                <element signature="e#22300#23806#0" />
+                <element signature="e#19727#20087#0" />
+                <element signature="e#20969#21213#0" />
+                <element signature="e#20394#20407#0" />
+                <element signature="e#22298#22481#0" />
+                <element signature="e#22548#22609#0" />
+                <element signature="e#22772#23197#0" />
+                <element signature="e#23351#25299#0" />
+                <element signature="e#25254#25842#0" />
+                <element signature="e#25624#25788#0" />
+                <element signature="e#26320#26484#0" />
+                <element signature="e#32612#33530#0" />
+                <element signature="e#32706#32712#0" />
+                <marker date="1541071272877" expanded="true" signature="23708:23709" ph="..." />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="703" column="87" lean-forward="true" selection-start-line="703" selection-start-column="87" selection-end-line="703" selection-end-column="87" />
+              <folding>
+                <element signature="e#17#26#0" expanded="true" />
+                <element signature="e#327#637#0" />
+                <element signature="e#677#923#0" />
+                <element signature="e#1057#1679#0" />
+                <element signature="e#1695#3770#0" />
+                <element signature="e#3995#4837#0" />
+                <element signature="e#4877#5361#0" />
+                <element signature="e#5405#12223#0" />
+                <element signature="e#12264#12513#0" />
+                <element signature="e#12557#12847#0" />
+                <element signature="e#12897#13160#0" />
+                <element signature="e#13207#13980#0" />
+                <element signature="e#14034#15619#0" />
+                <element signature="e#15663#21253#0" />
+                <element signature="e#21320#22244#0" />
+                <element signature="e#22300#23676#0" />
+                <element signature="e#22546#23466#0" />
+                <element signature="e#24150#24394#0" />
+                <element signature="e#24396#24409#0" />
+                <element signature="e#24919#35078#0" />
+                <element signature="e#25439#25622#0" />
+                <element signature="e#25689#25750#0" />
+                <element signature="e#25913#26338#0" />
+                <element signature="e#35111#36028#0" />
+                <element signature="e#35205#35211#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testHDFS.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -322,45 +301,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>广域网IP</find>
-      <find>f</find>
-      <find>encoding</find>
-      <find>test_file_path</find>
-      <find>make_csv</find>
-      <find>抓取条数</find>
-      <find>结束时间</find>
-      <find>抓取条数950</find>
-      <find>time.sleep(1)</find>
-      <find>伊卡璐洗发露抓取条数</find>
-      <find>继续获取end time</find>
-      <find>泰国小老板紫菜抓取条数</find>
-      <find>伊卡璐抓取条数</find>
-      <find>泰国小老板紫菜</find>
-      <find>page_content</find>
-      <find>Exception</find>
-      <find>page_by_lastdata</find>
-      <find>page_after_hour</find>
-      <find>115.151.2.154</find>
-      <find>2018-01-01-0:2019-01-01-0</find>
-      <find>重刷后仍然失败</find>
-      <find>get_html</find>
-      <find>58.61</find>
-      <find>2018</find>
-      <find>t1</find>
-      <find>伊卡璐洗发露2</find>
-      <find>伊卡璐洗发露</find>
       <find>获取最后一条微博时间失败</find>
+      <find>伊卡璐</find>
+      <find>2015-09-01-0:2016-01-01-0</find>
+      <find>https://s.weibo.com/weibo?q=宝洁&amp;typeall=1&amp;suball=1&amp;timescope=custom:2010-05-01-0:2010-09-01-0&amp;Refer=g&amp;page=2</find>
+      <find>none</find>
+      <find>'NoneType' object has no attribute 'find_all'</find>
       <find>exception</find>
-      <find>2012-09-01-0:</find>
+      <find>第一页获取不了 end data向前推一天</find>
+      <find>flag_to_diffday</find>
+      <find>print('写入数据' + start_data + '-----' + end_data)</find>
+      <find>写入数据</find>
+      <find>下一个url</find>
+      <find>2010-09-01-0:2010-11-03-0</find>
+      <find>2010-09-01-0:</find>
+      <find>2016-01-01-0:2016-04-13-0</find>
+      <find>宝洁</find>
+      <find>2018-10-31</find>
+      <find>伊卡璐.csv</find>
+      <find>https://s.weibo.com/weibo?q=伊卡璐&amp;typeall=1&amp;suball=1&amp;timescope=custom:2010-01-01-0:2010-05-01-0&amp;Refer=g&amp;page=</find>
+      <find>2010-01-01-0:</find>
+      <find>exc</find>
+      <find>写入</find>
+      <find>make_csv</find>
+      <find>获取第一页为空</find>
+      <find>结束</find>
+      <find>test_file_path</find>
+      <find>total_pages, 10</find>
+      <find>total_pages, 5</find>
+      <find>61.157.206.186</find>
+      <find>当前页抓取</find>
     </findStrings>
     <replaceStrings>
-      <replace>泰国小老板紫菜</replace>
-      <replace>make_csv</replace>
-      <replace>2017</replace>
-      <replace>t3</replace>
-      <replace>t4</replace>
-      <replace>t5</replace>
-      <replace>t6</replace>
       <replace>t7</replace>
       <replace>t8</replace>
       <replace>t9</replace>
@@ -383,7 +355,14 @@
       <replace>t26</replace>
       <replace>t27</replace>
       <replace>t2</replace>
+      <replace>MyThread(my_function</replace>
+      <replace>宝洁</replace>
+      <replace>print('写入数据'+total+'-----'+ start_data + '-----' + end_data)</replace>
+      <replace>print('写入数据'+str(total)+'-----'+ start_data + '-----' + end_data)</replace>
+      <replace>upload_file_path</replace>
+      <replace>total_pages, 5</replace>
       <replace>伊卡璐</replace>
+      <replace>total_pages, 50</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -398,15 +377,21 @@
         <option value="$PROJECT_DIR$/testFTP.py" />
         <option value="$PROJECT_DIR$/spider_weibo.py" />
         <option value="$PROJECT_DIR$/t2.py" />
-        <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/testThread.py" />
-        <option value="$PROJECT_DIR$/t1.py" />
+        <option value="$PROJECT_DIR$/MyThread.py" />
+        <option value="$PROJECT_DIR$/testHDFS.py" />
+        <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/testIP.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/test3.py" />
+        <option value="$PROJECT_DIR$/t1.py" />
         <option value="$PROJECT_DIR$/test2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -446,7 +431,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test2">
+  <component name="RunManager" selected="Python.t1">
+    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Weibo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/软件/python/Lib/site-packages/hdfs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:/软件/python/Lib/site-packages/hdfs/client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="t1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Weibo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -460,27 +466,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="t2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Weibo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -510,6 +495,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testHDFS" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Weibo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testHDFS.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testIP" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Weibo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -531,41 +537,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testThread" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Weibo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testThread.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.testIP" />
-      <item itemvalue="Python.testThread" />
-      <item itemvalue="Python.t2" />
       <item itemvalue="Python.test2" />
+      <item itemvalue="Python.testHDFS" />
+      <item itemvalue="Python.client" />
       <item itemvalue="Python.t1" />
+      <item itemvalue="Python.testIP" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test2" />
-        <item itemvalue="Python.testIP" />
         <item itemvalue="Python.t1" />
-        <item itemvalue="Python.testThread" />
-        <item itemvalue="Python.t2" />
+        <item itemvalue="Python.testIP" />
+        <item itemvalue="Python.test2" />
+        <item itemvalue="Python.testHDFS" />
+        <item itemvalue="Python.client" />
       </list>
     </recent_temporary>
   </component>
@@ -591,15 +576,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.07692308" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49841937" weight="0.59978306" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.7462039" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49789253" visible="true" weight="0.0867679" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.20281996" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3289183" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015806" side_tool="true" weight="0.29826465" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5021075" side_tool="true" weight="0.8383948" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -697,26 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/软件/python/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="864" selection-start-line="864" selection-end-line="864" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider_demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
           <caret line="108" selection-start-line="108" selection-end-line="108" />
-          <folding>
-            <element signature="e#17#26#0" expanded="true" />
-            <element signature="e#843#1177#0" />
-            <element signature="e#1215#1586#0" />
-            <element signature="e#1637#2822#0" />
-            <element signature="e#2861#3082#0" />
-            <element signature="e#3124#3716#0" />
-            <element signature="e#3759#4750#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,66 +707,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="647" selection-start-line="647" selection-end-line="647" />
-          <folding>
-            <element signature="e#17#26#0" expanded="true" />
-            <element signature="e#304#926#0" />
-            <element signature="e#1069#1821#0" />
-            <element signature="e#1860#2284#0" />
-            <element signature="e#2328#8300#0" />
-            <element signature="e#2640#8283#0" />
-            <element signature="e#8622#8912#0" />
-            <element signature="e#8957#9220#0" />
-            <element signature="e#9267#10040#0" />
-            <element signature="e#10094#11215#0" />
-            <element signature="e#11259#12197#0" />
-            <element signature="e#12254#13652#0" />
-            <element signature="e#13693#14186#0" />
-            <element signature="e#14249#14673#0" />
-            <element signature="e#14723#15227#0" />
-            <element signature="e#15258#21516#0" />
-            <element signature="e#15811#16159#0" />
-            <element signature="e#21556#22290#0" />
-            <element signature="e#22324#22750#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test1.py">
+    <entry file="file://D:/软件/python/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1361">
-          <caret line="358" column="4" selection-start-line="358" selection-start-column="4" selection-end-line="358" selection-end-column="4" />
-          <folding>
-            <element signature="e#17#26#0" expanded="true" />
-            <element signature="e#273#926#0" />
-            <element signature="e#2114#8086#0" />
-            <element signature="e#2426#8069#0" />
-            <element signature="e#8127#8347#0" />
-            <element signature="e#8391#8681#0" />
-            <element signature="e#8726#8989#0" />
-            <element signature="e#9036#9809#0" />
-            <element signature="e#9863#10967#0" />
-            <element signature="e#11011#11949#0" />
-            <element signature="e#12006#13404#0" />
-            <element signature="e#13693#14186#0" />
-            <element signature="e#14249#14493#0" />
-            <element signature="e#14710#15205#0" />
-            <element signature="e#14973#15321#0" />
-            <element signature="e#21556#22267#0" />
-          </folding>
+        <state relative-caret-position="77">
+          <caret line="916" selection-start-line="916" selection-end-line="916" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/threading.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="64" column="50" lean-forward="true" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/软件/python/Lib/site-packages/pyhdfs.py" />
+    <entry file="file://D:/软件/python/Lib/site-packages/urllib3/connectionpool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="637" selection-start-line="637" selection-end-line="637" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/软件/python/Lib/site-packages/hdfs/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="964" column="10" selection-start-line="964" selection-start-column="6" selection-end-line="964" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        <state relative-caret-position="525">
+          <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="24" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <marker date="1540459717692" expanded="true" signature="81:86" ph="..." />
-            <marker date="1540459717692" expanded="true" signature="81:120" ph="..." />
-            <marker date="1540459717692" expanded="true" signature="132:133" ph="..." />
-            <marker date="1540459717692" expanded="true" signature="132:193" ph="..." />
-            <marker date="1540459717692" expanded="true" signature="132:317" ph="..." />
           </folding>
         </state>
       </provider>
@@ -805,23 +760,74 @@
     <entry file="file://$PROJECT_DIR$/t2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testIP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3003">
+          <caret line="993" selection-start-line="993" selection-end-line="993" />
+          <folding>
+            <element signature="e#17#26#0" expanded="true" />
+            <element signature="e#327#637#0" />
+            <element signature="e#677#923#0" />
+            <element signature="e#1057#1679#0" />
+            <element signature="e#1732#3807#0" />
+            <element signature="e#4032#4874#0" />
+            <element signature="e#5442#12260#0" />
+            <element signature="e#12301#12550#0" />
+            <element signature="e#12594#12884#0" />
+            <element signature="e#12934#13197#0" />
+            <element signature="e#13244#14017#0" />
+            <element signature="e#14071#15656#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/t1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        <state relative-caret-position="578">
+          <caret line="208" column="15" lean-forward="true" selection-start-line="208" selection-start-column="15" selection-end-line="208" selection-end-column="15" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/软件/python/Lib/cProfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="105" column="15" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testHDFS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/testFTP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
+        <state relative-caret-position="492">
           <caret line="44" selection-start-line="44" selection-end-line="44" selection-end-column="24" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -829,47 +835,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testIP.py">
+    <entry file="file://$PROJECT_DIR$/test3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
+        <state relative-caret-position="450">
+          <caret line="703" column="87" lean-forward="true" selection-start-line="703" selection-start-column="87" selection-end-line="703" selection-end-column="87" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#35#501#0" />
-            <element signature="e#558#689#0" />
+            <element signature="e#17#26#0" expanded="true" />
+            <element signature="e#327#637#0" />
+            <element signature="e#677#923#0" />
+            <element signature="e#1057#1679#0" />
+            <element signature="e#1695#3770#0" />
+            <element signature="e#3995#4837#0" />
+            <element signature="e#4877#5361#0" />
+            <element signature="e#5405#12223#0" />
+            <element signature="e#12264#12513#0" />
+            <element signature="e#12557#12847#0" />
+            <element signature="e#12897#13160#0" />
+            <element signature="e#13207#13980#0" />
+            <element signature="e#14034#15619#0" />
+            <element signature="e#15663#21253#0" />
+            <element signature="e#21320#22244#0" />
+            <element signature="e#22300#23676#0" />
+            <element signature="e#22546#23466#0" />
+            <element signature="e#24150#24394#0" />
+            <element signature="e#24396#24409#0" />
+            <element signature="e#24919#35078#0" />
+            <element signature="e#25439#25622#0" />
+            <element signature="e#25689#25750#0" />
+            <element signature="e#25913#26338#0" />
+            <element signature="e#35111#36028#0" />
+            <element signature="e#35205#35211#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="553" column="27" selection-start-line="553" selection-start-column="27" selection-end-line="553" selection-end-column="27" />
+        <state relative-caret-position="-614">
+          <caret line="896" column="30" selection-start-line="896" selection-start-column="30" selection-end-line="896" selection-end-column="30" />
           <folding>
             <element signature="e#17#26#0" expanded="true" />
-            <element signature="e#290#912#0" />
-            <element signature="e#966#2065#0" />
-            <element signature="e#1103#1945#0" />
-            <element signature="e#2029#2467#0" />
-            <element signature="e#2453#8425#0" />
-            <element signature="e#8466#8703#0" />
-            <element signature="e#9087#9350#0" />
-            <element signature="e#9397#10170#0" />
-            <element signature="e#10323#11832#0" />
-            <element signature="e#11582#12520#0" />
-            <element signature="e#12577#13953#0" />
-            <element signature="e#14005#14462#0" />
-            <element signature="e#14525#14769#0" />
-            <element signature="e#14819#15274#0" />
-            <element signature="e#16140#16201#0" />
-            <element signature="e#15859#16215#0" />
-            <element signature="e#16491#17176#0" />
-            <element signature="e#17677#18166#0" />
-            <element signature="e#19404#20134#0" />
-            <element signature="e#20161#21727#0" />
-            <element signature="e#21791#21914#0" />
-            <element signature="e#21948#22000#0" />
-            <element signature="e#22126#22772#0" />
+            <element signature="e#287#597#0" />
+            <element signature="e#637#883#0" />
+            <element signature="e#1019#1641#0" />
+            <element signature="e#1694#2793#0" />
+            <element signature="e#4019#4861#0" />
+            <element signature="e#4901#5385#0" />
+            <element signature="e#5429#12327#0" />
+            <element signature="e#12368#12617#0" />
+            <element signature="e#12661#12951#0" />
+            <element signature="e#13001#13264#0" />
+            <element signature="e#13311#14084#0" />
+            <element signature="e#14138#15721#0" />
+            <element signature="e#15765#18054#0" />
+            <element signature="e#18121#19045#0" />
+            <element signature="e#22300#23806#0" />
+            <element signature="e#19727#20087#0" />
+            <element signature="e#20969#21213#0" />
+            <element signature="e#20394#20407#0" />
+            <element signature="e#22298#22481#0" />
+            <element signature="e#22548#22609#0" />
+            <element signature="e#22772#23197#0" />
+            <element signature="e#23351#25299#0" />
+            <element signature="e#25254#25842#0" />
+            <element signature="e#25624#25788#0" />
+            <element signature="e#26320#26484#0" />
+            <element signature="e#32612#33530#0" />
+            <element signature="e#32706#32712#0" />
+            <marker date="1541071272877" expanded="true" signature="23708:23709" ph="..." />
           </folding>
         </state>
       </provider>
