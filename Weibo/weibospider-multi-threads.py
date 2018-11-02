@@ -8,8 +8,6 @@ import datetime
 import ftplib
 import threading
 import shutil
-import sys
-# from cProfile import Profile
 from hdfs.client import *
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
@@ -44,9 +42,8 @@ class Logger(object):
     def flush(self):
         pass
 
-#控制台日志
-sys.stdout = Logger("E:\\GitHub\\Python\\text_log_2.txt")
 
+#浏览器头
 ua = UserAgent(use_cache_server=False)
 
 # 伪装浏览器
@@ -60,8 +57,6 @@ request_headers = {
     'Upgrade-Insecure-Requests': '1',
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                   'Chrome/67.0.3396.62 Safari/537.36'
-    # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
-    #               'Chrome/63.0.3239.132 Safari/537.36'
 }
 
 # IP池
@@ -151,12 +146,14 @@ proxy = [
 # 连接hdfs
 client = Client("http://10.13.0.80:9870/", root="/", timeout=10000, session=False)
 
+key_word = '伊卡璐'
 csv_limit = 1000
+#控制台日志
+sys.stdout = Logger("E:\\GitHub\\Python\\text_log_3.txt")
 file_path = 'E:\\GitHub\\Python\\test4'#写入数据目录
 upload_file_path='E:\\GitHub\\Python\\upload'#上传目录地址
 #url字典
 url = {
-    # 'home_page':'https://s.weibo.com/weibo?q=%(keyword)s&typeall=1&suball=1&Refer=g&page=1',
 
     'home_page':'https://s.weibo.com/weibo?q=%(keyword)s&typeall=1&suball=1&timescope=custom:%(start_data)s:%(end_data)s&Refer=g&page=1',
 
@@ -489,110 +486,10 @@ def get_data(url):
     result_buffer = []
     count = []
     getdata_threads = []
-    g1 = MyThread(get_data_thread, args=(url, 1, total_pages, 50))
-    getdata_threads.append(g1)
-    g2 = MyThread(get_data_thread, args=(url, 2, total_pages, 50))
-    getdata_threads.append(g2)
-    g3 = MyThread(get_data_thread, args=(url, 3, total_pages, 50))
-    getdata_threads.append(g3)
-    g4 = MyThread(get_data_thread, args=(url, 4, total_pages, 50))
-    getdata_threads.append(g4)
-    g5 = MyThread(get_data_thread, args=(url, 5, total_pages, 50))
-    getdata_threads.append(g5)
-    g6 = MyThread(get_data_thread, args=(url, 6, total_pages, 50))
-    getdata_threads.append(g6)
-    g7 = MyThread(get_data_thread, args=(url, 7, total_pages, 50))
-    getdata_threads.append(g7)
-    g8 = MyThread(get_data_thread, args=(url, 8, total_pages, 50))
-    getdata_threads.append(g8)
-    g9 = MyThread(get_data_thread, args=(url, 9, total_pages, 50))
-    getdata_threads.append(g9)
-    g10 = MyThread(get_data_thread, args=(url, 10, total_pages, 50))
-    getdata_threads.append(g10)
-
-    g11 = MyThread(get_data_thread, args=(url, 11, total_pages, 50))
-    getdata_threads.append(g11)
-    g12 = MyThread(get_data_thread, args=(url, 12, total_pages, 50))
-    getdata_threads.append(g12)
-    g13 = MyThread(get_data_thread, args=(url, 13, total_pages, 50))
-    getdata_threads.append(g13)
-    g14 = MyThread(get_data_thread, args=(url, 14, total_pages, 50))
-    getdata_threads.append(g14)
-    g15 = MyThread(get_data_thread, args=(url, 15, total_pages, 50))
-    getdata_threads.append(g15)
-    g16 = MyThread(get_data_thread, args=(url, 16, total_pages, 50))
-    getdata_threads.append(g16)
-    g17 = MyThread(get_data_thread, args=(url, 17, total_pages, 50))
-    getdata_threads.append(g17)
-    g18 = MyThread(get_data_thread, args=(url, 18, total_pages, 50))
-    getdata_threads.append(g18)
-    g19 = MyThread(get_data_thread, args=(url, 19, total_pages, 50))
-    getdata_threads.append(g19)
-    g20 = MyThread(get_data_thread, args=(url, 20, total_pages, 50))
-    getdata_threads.append(g20)
-
-    g21 = MyThread(get_data_thread, args=(url, 21, total_pages, 50))
-    getdata_threads.append(g21)
-    g22 = MyThread(get_data_thread, args=(url, 22, total_pages, 50))
-    getdata_threads.append(g22)
-    g23 = MyThread(get_data_thread, args=(url, 23, total_pages, 50))
-    getdata_threads.append(g23)
-    g24 = MyThread(get_data_thread, args=(url, 24, total_pages, 50))
-    getdata_threads.append(g24)
-    g25 = MyThread(get_data_thread, args=(url, 25, total_pages, 50))
-    getdata_threads.append(g25)
-    g26 = MyThread(get_data_thread, args=(url, 26, total_pages, 50))
-    getdata_threads.append(g26)
-    g27 = MyThread(get_data_thread, args=(url, 27, total_pages, 50))
-    getdata_threads.append(g27)
-    g28 = MyThread(get_data_thread, args=(url, 28, total_pages, 50))
-    getdata_threads.append(g28)
-    g29 = MyThread(get_data_thread, args=(url, 29, total_pages, 50))
-    getdata_threads.append(g29)
-    g30 = MyThread(get_data_thread, args=(url, 30, total_pages, 50))
-    getdata_threads.append(g30)
-
-    g31 = MyThread(get_data_thread, args=(url, 31, total_pages, 50))
-    getdata_threads.append(g31)
-    g32 = MyThread(get_data_thread, args=(url, 32, total_pages, 50))
-    getdata_threads.append(g32)
-    g33 = MyThread(get_data_thread, args=(url, 33, total_pages, 50))
-    getdata_threads.append(g33)
-    g34 = MyThread(get_data_thread, args=(url, 34, total_pages, 50))
-    getdata_threads.append(g34)
-    g35 = MyThread(get_data_thread, args=(url, 35, total_pages, 50))
-    getdata_threads.append(g35)
-    g36 = MyThread(get_data_thread, args=(url, 36, total_pages, 50))
-    getdata_threads.append(g36)
-    g37 = MyThread(get_data_thread, args=(url, 37, total_pages, 50))
-    getdata_threads.append(g37)
-    g38 = MyThread(get_data_thread, args=(url, 38, total_pages, 50))
-    getdata_threads.append(g38)
-    g39 = MyThread(get_data_thread, args=(url, 39, total_pages, 50))
-    getdata_threads.append(g39)
-    g40 = MyThread(get_data_thread, args=(url, 40, total_pages, 50))
-    getdata_threads.append(g40)
-
-    g41 = MyThread(get_data_thread, args=(url, 41, total_pages, 50))
-    getdata_threads.append(g41)
-    g42 = MyThread(get_data_thread, args=(url, 42, total_pages, 50))
-    getdata_threads.append(g42)
-    g43 = MyThread(get_data_thread, args=(url, 43, total_pages, 50))
-    getdata_threads.append(g43)
-    g44 = MyThread(get_data_thread, args=(url, 44, total_pages, 50))
-    getdata_threads.append(g44)
-    g45 = MyThread(get_data_thread, args=(url, 45, total_pages, 50))
-    getdata_threads.append(g45)
-    g46 = MyThread(get_data_thread, args=(url, 46, total_pages, 50))
-    getdata_threads.append(g46)
-    g47 = MyThread(get_data_thread, args=(url, 47, total_pages, 50))
-    getdata_threads.append(g47)
-    g48 = MyThread(get_data_thread, args=(url, 48, total_pages, 50))
-    getdata_threads.append(g48)
-    g49 = MyThread(get_data_thread, args=(url, 49, total_pages, 50))
-    getdata_threads.append(g49)
-    g50 = MyThread(get_data_thread, args=(url, 50, total_pages, 50))
-    getdata_threads.append(g50)
+    getdata_total_threads = 50
+    for g in range(getdata_total_threads):
+        g = MyThread(get_data_thread,args=(url,g+1,total_pages,50))
+        getdata_threads.append(g)
 
     for g in getdata_threads:
         g.setDaemon(True)
@@ -655,25 +552,21 @@ def get_reset_data(lost_get,total):
     #重刷
     while True:
         print('第' + str(reset) + '次重刷')
-        for i in range(len(lost_get)):
-            weibo_urls = lost_get[i]
-            print(weibo_urls)
-            # 页面有没有内容
-            html = get_html(weibo_urls)
-            flag_content = page_content(html)
-            if not flag_content:
-                try:
-                    result = lookup_data(html)
-                    result_buffer.append(result)
-                    total = total + len(result)
-                    print('当前页抓取条数' + str(len(result)))
-                    if len(result) == 0:
-                        lost_get1.append(weibo_urls)
-                except Exception as error:
-                    print(error)
-                    continue
-            elif flag_content:
-                lost_get1.append(weibo_urls)
+        lenth = len(lost_get)
+
+        reset_threads = []
+        for i in range(lenth):
+            i = MyThread(get_reset_data_threads,args=(lost_get[i],))
+            reset_threads.append(i)
+        for i in reset_threads:
+            i.setDaemon(True)
+            i.start()
+        for i in reset_threads:
+            i.join()
+        for i in reset_threads:
+            total = total + i.get_result()[0]
+            lost_get1  = lost_get1 + i.get_result()[1]
+
         lost_get = lost_get1
         lost_get1 = []
         reset = reset + 1
@@ -691,6 +584,33 @@ def get_reset_data(lost_get,total):
     return count
 
 
+#分线程获取重刷页面
+def get_reset_data_threads(url):
+    result_buffer = []
+    lost_get1 = []
+    count = []
+    total = 0
+    print(url)
+    # 页面有没有内容
+    html = get_html(url)
+    flag_content = page_content(html)
+    if not flag_content:
+        try:
+            result = lookup_data(html)
+            result_buffer.append(result)
+            total = len(result)
+            print('当前页抓取条数' + str(len(result)))
+            if len(result) == 0:
+                lost_get1.append(url)
+        except Exception as error:
+            print(error)
+    elif flag_content:
+        lost_get1.append(url)
+
+    count.append(total)
+    count.append(lost_get1)
+    return count
+
 # 写入csv
 def make_csv(result_buffer,keyword):
     now_time = datetime.datetime.now()
@@ -699,9 +619,9 @@ def make_csv(result_buffer,keyword):
     #创建keyword 文件夹
     for i in range(0,len(result_buffer)):
         save_data(result_buffer[i], file_path+'/' + now + csv_name)
-
     result_buffer.clear()
-    # shutil.copy(file_path+'/' + now + csv_name,upload_file_path+'/' + now + csv_name)
+    #复制到upload目录
+    shutil.copy(file_path+'/' + now + csv_name,upload_file_path+'/' + now + csv_name)
 
 #获取以最后一条微博时间为筛选条件的url
 def get_last_data_url(last_data):
@@ -711,16 +631,6 @@ def get_last_data_url(last_data):
     weibo_urls = url['page_by_lastdata'] %{'dateend':dateend}
     return weibo_urls
 
-#获取文件夹中新文件的方法
-# def new_file(upload_file_path):
-#     try:
-#         lists = os.listdir(upload_file_path)                                    #列出目录的下所有文件和文件夹保存到lists
-#         if len(lists)>0:
-#             lists.sort(key=lambda fn:os.path.getmtime(upload_file_path + "\\" + fn))#按时间排序
-#             file_new = os.path.join(upload_file_path,lists[-1])                     #获取最新的文件保存到file_new 全路径
-#             return file_new
-#     except:
-#         print('文件夹还没创建')
 
 #方法主体
 def my_function(keyword,start_data,end_data):
@@ -895,7 +805,7 @@ def my_function(keyword,start_data,end_data):
                             make_csv(result_buffer, keyword)
                             total = 0
 
-                    # 如果页数少于50 结束
+                    # 如果页数少于48 结束
                     if all_page < 48:
                         print(str(all_page)+'结束')
                         break
@@ -936,7 +846,7 @@ def my_function(keyword,start_data,end_data):
         result_buffer = result_buffer+count[1]
     if len(result_buffer)>0:
     # 剩下数据写入csv
-        print('写入重刷数据'+str(total)+'-----'+ start_data + '-----' + end_data)
+        print('写入重刷数据'+'-----'+ start_data + '-----' + end_data)
         make_csv(result_buffer, keyword)
     print(keyword+'抓取条数' + str(total_count)+'---'+start_data+'---'+end_data)
     return total_count
@@ -967,74 +877,19 @@ def upload_csv():
             print('上传结束')
             break
 
+#日期间隔线程
 threads = []
-#2018-2019
-t1 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2011-01-01-0',))
+#2016-2019
+t1 = MyThread(my_function,args=(key_word,'2016-01-01-0','2019-01-01-0',))
 threads.append(t1)
-# t2 = MyThread(my_function,args=('伊卡璐','2013-01-01-0','2016-01-01-0',))
-# threads.append(t2)
-# t3 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2013-01-01-0',))
-# threads.append(t3)
-# # 2017-2018
-# t4 = MyThread(my_function,args=('伊卡璐','2017-09-01-0','2018-01-01-0',))
-# threads.append(t4)
-# t5 = MyThread(my_function,args=('伊卡璐','2017-05-01-0','2017-09-01-0',))
-# threads.append(t5)
-# t6 = MyThread(my_function,args=('伊卡璐','2017-01-01-0','2017-05-01-0',))
-# threads.append(t6)
-# #2016-2017
-# t7 = MyThread(my_function,args=('伊卡璐','2016-09-01-0','2017-01-01-0',))
-# threads.append(t7)
-# t8 = MyThread(my_function,args=('伊卡璐','2016-05-01-0','2016-09-01-0',))
-# threads.append(t8)
-# t9 = MyThread(my_function,args=('伊卡璐','2016-01-01-0','2016-05-01-0',))
-# threads.append(t9)
-# #2015-2016
-# t10 = MyThread(my_function,args=('伊卡璐','2015-09-01-0','2016-01-01-0',))
-# threads.append(t10)
-# t11 = MyThread(my_function,args=('伊卡璐','2015-05-01-0','2015-09-01-0',))
-# threads.append(t11)
-# t12 = MyThread(my_function,args=('伊卡璐','2015-01-01-0','2015-05-01-0',))
-# threads.append(t12)
-# #2014-2015
-# t13 = MyThread(my_function,args=('伊卡璐','2014-09-01-0','2015-01-01-0',))
-# threads.append(t13)
-# t14 = MyThread(my_function,args=('伊卡璐','2014-05-01-0','2014-09-01-0',))
-# threads.append(t14)
-# t15 = MyThread(my_function,args=('伊卡璐','2014-01-01-0','2014-05-01-0',))
-# threads.append(t15)
-#2013-2014
-# t16 = MyThread(my_function,args=('伊卡璐','2013-09-01-0','2014-01-01-0'))
-# threads.append(t16)
-# t17 = MyThread(my_function,args=('伊卡璐','2013-05-01-0','2014-09-01-0',))
-# threads.append(t17)
-# t18 = MyThread(my_function,args=('伊卡璐','2013-01-01-0','2013-05-01-0',))
-# threads.append(t18)
-# #2012-2013
-# t19 = MyThread(my_function,args=('伊卡璐','2012-09-01-0','2013-01-01-0',))
-# threads.append(t19)
-# t20 = MyThread(my_function,args=('伊卡璐','2012-05-01-0','2012-09-01-0',))
-# threads.append(t20)
-# t21 = MyThread(my_function,args=('伊卡璐','2012-01-01-0','2012-05-01-0',))
-# threads.append(t21)
-# #2011-2012
-# t22 = MyThread(my_function,args=('伊卡璐','2011-09-01-0','2012-01-01-0',))
-# threads.append(t22)
-# t23 = MyThread(my_function,args=('伊卡璐','2011-05-01-0','2011-09-01-0',))
-# threads.append(t23)
-# t24 = MyThread(my_function,args=('伊卡璐','2011-01-01-0','2011-05-01-0',))
-# threads.append(t24)
-# #2010-2011
-# t25 = MyThread(my_function,args=('伊卡璐','2010-09-01-0','2011-01-01-0',))
-# threads.append(t25)
-# t26 = MyThread(my_function,args=('伊卡璐','2010-05-01-0','2010-09-01-0',))
-# threads.append(t26)
-# t27 = MyThread(my_function,args=('伊卡璐','2010-01-01-0','2010-05-01-0',))
-# threads.append(t27)
-# # 2009-2010
-# t28 = MyThread(my_function,args=('伊卡璐','2009-08-16-0','2010-01-01-0',))
-# threads.append(t28)
+#2013-2016
+t2 = MyThread(my_function,args=(key_word,'2013-01-01-0','2016-01-01-0',))
+threads.append(t2)
+#微博开始-2013
+t3 = MyThread(my_function,args=(key_word,'2009-08-16-0','2013-01-01-0',))
+threads.append(t3)
 
+#上传hdfs线程
 upload_threads = []
 u1 = MyThread(upload_csv)
 upload_threads.append(u1)
@@ -1050,15 +905,15 @@ if __name__ == '__main__':
         t.start()
 
     flag_end_upload = False
-    # u1.setDaemon(True)
-    # u1.start()
+    u1.setDaemon(True)
+    u1.start()
 
     #抓取线程结束后 程序结束
     for t in threads:
         t.join()
     print('爬取线程已结束')
-    # flag_a = True
-    # u1.join()
+    flag_end_upload = True
+    u1.join()
     for t in threads:
         t_count = t_count + t.get_result()
     print('总统计数'+str(t_count))
