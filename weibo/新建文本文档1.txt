@@ -1,0 +1,41 @@
+feed_list_item 根据mid判断微博 有mid才去爬
+
+UserID=uid   info里面
+PostID=mid   feed_list_item里面
+PostFrom=    from里面
+PostTime=    from里面
+CreateTime=   今日时间
+ForwardCount=card-act li里面
+CommentCount=card-act li里面
+LikeCount=card-act li里面
+Content=      card-feed content txt 有feed_list_content_full 就选full
+
+Tags= a标签  话题
+Urls= 链接
+Pics=media media-piclist m3 li 里面 需要判断有多少个图
+Videos=card-feed content txt 可能没视频
+转发微博 card-comment feed_list_forwardContent
+
+<div class="media media-piclist" node-type="fl_pic_list" action-data="uid=1989519725&mid=4278479762080036
+
+ForwardFromUserID=rouid / ru       
+ForwardFromPostID=omid  / rmid 转发内容 赞
+
+card-feed content
+card-act 转发 评论 赞
+
+
+Q：运行过快 遇到搜索内容页出不来 
+	即判断有无下一页失效 
+	如何终止循环
+D： 跳过：判断条件换成有下一页 || class="card card-no-result s-pt20b40"
+    重刷：时间间隔？ 怎样写？ 换IP或换cookie刷新？
+
+按一天天查  数据量超过X 再分时段截取
+  日期逻辑判断
+    有下一页 或 class="card card-no-result s-pt20b40" 则跳过
+      总共50 连续三次 card card-no-result 结束 去下一日
+
+定检索日期
+ 
+	
