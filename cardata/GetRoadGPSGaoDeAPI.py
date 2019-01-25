@@ -45,6 +45,8 @@ def transformlng(lng, lat):
     ret += (150.0 * sin(lng / 12.0 * PI) + 300.0 * sin(lng / 30.0 * PI)) * 2.0 / 3.0
     return ret
 
+# 以上四个方法是gcj02转wgs84 网上查的 另外三个方法是用在gcj02towgs84里面 程序只是调用了gcj02towgs84
+
 #根据两点之间距离生成经纬度 stepTime是两点之间相隔距离 startTime=0 endTime=两个点之间总距离
 def createGPSAtTwoGPS(startTime, endTime, startLng, startLat, endLng, endLat, stepTime):
     rs = []
@@ -84,31 +86,37 @@ def write_csv(result,filename):
             f_csv.writerow((result[i]))
 
 #调用高德API 获取原始道路经纬度点
+# api地址 https://lbs.amap.com/api/webservice/guide/api/direction#driving
 def get_road_info(origin,destination):
     url = 'http://restapi.amap.com/v3/direction/driving?'
     postData={
-        'key':'0976905d5a7993c6833f1411a792dcb6',
-        'origin':origin,
-        'destination':destination,
+        'key':'0976905d5a7993c6833f1411a792dcb6',#高德地图API的key，使用者最好换成自己的
+        'origin':origin, #起点
+        'destination':destination, #终点
         'extensions':'base',
         'strategy':'0',#默认 速度优先，不考虑当时路况，返回耗时最短的路线，但是此路线不一定距离最短
     }
-    req = requests.get(url,postData)
-    road_info = req.json()
+    req = requests.get(url,postData) #发送请求并获取数据
+    road_info = req.json() #数据转成json格式
+    # 一层一层进去解析
     route = road_info['route']
     paths = route['paths']
     steps = paths[0]['steps']
+
     road_result = []
-    #遍历所有经纬度串
+    #遍历所有经纬度串 取出gps坐标 并存入road_result
     for i in range(len(steps)):
         polyline = steps[i]['polyline']
         gps = polyline.split(';')
         for j in range(len(gps)):
             if gps[j] not in road_result:
                 road_result.append(gps[j])
-    #gcj02坐标转wgs84坐标
+
+    #取出来后 经纬度是在同一个下标，在此分割开两个下标
     for i in range(len(road_result)):
-        road_result[i] = gcj02towgs84(float(road_result[i].split(',')[0]), float(road_result[i].split(',')[1]))
+        # gcj02坐标转wgs84坐标 即高德转ais
+        # road_result[i] = gcj02towgs84(float(road_result[i].split(',')[0]), float(road_result[i].split(',')[1]))
+        road_result[i] = (float(road_result[i].split(',')[0]), float(road_result[i].split(',')[1]))
     return road_result
 
 # 根据csv文件输入的起点和终点 坐标即可生成每段路的gps坐标集
@@ -117,7 +125,7 @@ if __name__ == '__main__':
     for j in range(len(road_origin_destination)):
         origin = road_origin_destination[j][1]
         destination = road_origin_destination[j][3]
-        filename ='roadGPS/road_'+str(j)+'.csv'
+        filename ='roadGPS1/road_'+str(j+1)+'test.csv'
         print(origin,destination,filename)
         road_result = get_road_info(origin,destination)
         road_gps_result = []
@@ -127,6 +135,7 @@ if __name__ == '__main__':
             dis = geodistance(road_result[i][0],road_result[i][1],road_result[i+1][0],road_result[i+1][1])
             total_dis = total_dis + dis
         print(total_dis)
+
         createGPS = []
         #两点之间等距离生成经纬度坐标 平均距离间隔0.2m
         for i in range(len(road_result)-1):

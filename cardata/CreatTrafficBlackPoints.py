@@ -34,6 +34,7 @@ if __name__ == '__main__':
         road_gps = get_csv(filename)
         for i in range(random.randint(1,3)):
             flag = random.randint(1000, len(road_gps))
-            traffic_black_points.append([id]+road_gps[flag]+[road])
+            for flag in range(flag,flag+150):
+                traffic_black_points.append([id]+road_gps[flag]+[road])
             id = id +1
     write_csv(traffic_black_points,'roadGPS/traffic_black_points.csv')
